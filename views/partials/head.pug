@@ -14,6 +14,7 @@ html(lang="tr")
       if includes.external.indexOf('socket.io') > -1 
         script(src=`/socket.io/socket.io.js`)
       if includes.external.indexOf('css') > -1
+        link(rel="stylesheet", href=`/css/${page}.css`)
     link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,200,300,400,500,600,700,800,900" rel="stylesheet")
     link(rel="stylesheet", href=`/css/general.css`)
   bodyv

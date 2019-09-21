@@ -1,7 +1,25 @@
 extends ./head
 block content
   .all-wrapper
-    .header-wrapper
+    .all-header
       img.header-logo(src="/res/images/main_logo.png")
-    .main-wrapper
+      span.all-product-button Tüm Ürünler
+        i.fas.fa-chevron-down
+      span.new-product-button En Yeniler
+      span.discount-product-button İndirimdekiler
+      .search-wrapper
+        i.fas.fa-search
+        input.search-input(type="text" placeholder="Ürün Ara" autocomplete="off")
+      .user-wrapper
+        a.login-wrapper(href="/auth") 
+          i.fas.fa-user
+          .login-button
+            span Giriş Yap 
+            span veya Üye Ol
+        a.basket-wrapper(href="/index/basket") 
+          .basket-button
+            span Alışveriş
+            span Sepetim
+          i.fas.fa-shopping-basket
+    .all-content
       block main

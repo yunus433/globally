@@ -1,0 +1,34 @@
+extends ./../partials/header
+block main
+  form.main-wrapper-left-side(action="/auth/login" method="POST")
+    span.main-title Üye Girişi
+    span.main-input-title E-Posta Adresi
+    .main-input-wrapper
+      i.fas.fa-envelope
+      input.main-input(type="text" name="email" placeholder="E-Posta Adresi" spellcheck="false" autofocus autocomplete="off")
+    span.main-input-title Şifre
+    .main-input-wrapper
+      i.fas.fa-key
+      input.main-input(type="password" name="password" placeholder="Şifre")
+    button.send-form-button Giriş Yap
+    if login_error
+      .error-wrapper
+        span= login_error
+  form.main-wrapper-right-side(action="/auth/register" method="POST")
+    span.main-title Üye Ol
+    span.main-input-title E-Posta Adresi
+    .main-input-wrapper
+      i.fas.fa-envelope
+      input.main-input(type="text" name="email" placeholder="E-Posta Adresi" spellcheck="false" autocomplete="off")
+    span.main-input-title Şifre
+    .main-input-wrapper
+      i.fas.fa-key
+      input.main-input(type="password" name="password" placeholder="Şifre")
+    span.main-input-title Şifre Tekrarı
+    .main-input-wrapper
+      i.fas.fa-key
+      input.main-input(type="password" name="confirm_password" placeholder="Şifre Tekrarı")
+    button.send-form-button.register-send-button Üye Ol
+    if register_error
+      .error-wrapper
+        span= register_error

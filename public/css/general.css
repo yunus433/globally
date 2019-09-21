@@ -7,3 +7,151 @@ rgb(243, 149, 63); turuncu
 rgb(205, 204, 204); gri
 rgb(39, 53, 131); mavi 
 */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;  
+  font-family: "Source Sans Pro";
+}
+html {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+	background-size: cover;
+}
+body {
+  font-family: "Source Sans Pro";
+  width: 100vw;
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  bottom: 0px;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.all-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  background-color: rgb(253, 253, 253);
+}
+.all-header {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid rgb(248, 248, 248);
+  background-color: white;
+}
+.header-logo {
+  width: 10%;
+  height: auto;
+  margin-left: 2%;
+}
+.all-product-button {
+  font-size: 125%;
+  color: rgb(64, 64, 64);
+  font-weight: 600;
+  margin-left: 2%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.all-product-button i {
+  font-size: 80%;
+  margin-left: 5px;
+}
+.new-product-button {
+  font-size: 125%;
+  color: rgb(87, 154, 40);
+  font-weight: 600;
+  margin-left: 2%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.discount-product-button {
+  font-size: 125%;
+  color: rgb(243, 149, 63);
+  font-weight: 600;
+  margin-left: 2%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search-wrapper {
+  margin-left: auto;
+  margin-right: 3%;
+  width: 20%;
+  height: 40%;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+  border: 2px solid rgb(248, 248, 248);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+.search-input {
+  border: none;
+  font-size: 100%;
+  color: rgb(112, 112, 112);
+  outline: none;
+  width: 90%;
+}
+.search-wrapper i {
+  color: rgb(112, 112, 112);
+  font-size: 80%;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.user-wrapper {
+  display: flex;
+  width: 20%;
+  margin-right: 3%;
+}
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  color: rgb(64, 64, 64);
+  text-decoration: none;
+  padding-right: 20px;
+  border-right: 1px solid rgb(64, 64, 64);
+}
+.login-wrapper i {
+  font-size: 150%;
+  margin-right: 5px;
+}
+.login-button {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+.basket-wrapper {
+  display: flex;
+  align-items: center;
+  color: rgb(64, 64, 64);
+  text-decoration: none;
+  padding-left: 20px;
+}
+.basket-wrapper i {
+  font-size: 150%;
+  margin-left: 5px;
+}
+.basket-button {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.all-content {
+  flex: 7;
+}
