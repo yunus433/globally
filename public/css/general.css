@@ -43,12 +43,94 @@ body {
   overflow-y: hidden;
   background-color: rgb(253, 253, 253);
 }
+.responsive-menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
+  border-right: 2px solid rgb(248, 248, 248);
+  transform: translateX(-100%);
+}
+.responsive-menu-header {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 3%;
+  border-bottom: 2px solid rgb(248, 248, 248);
+}
+.responsive-menu-header i {
+  color: rgb(64, 64, 64);
+  cursor: pointer;
+  font-size: 125%;
+}
+.responsive-menu-content {
+  flex: 10;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3%;
+}
+.responsive-all-product-button {
+  font-size: 125%;
+  color: rgb(64, 64, 64);
+  font-weight: 600;
+  margin-left: 3%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-bottom: 3%;
+  margin-bottom: 3%;
+  border-bottom: 2px solid rgb(248, 248, 248);
+}
+.responsive-all-product-button i {
+  font-size: 80%;
+  margin-left: 5px;
+}
+.responsive-new-product-button {
+  font-size: 125%;
+  color: rgb(87, 154, 40);
+  font-weight: 600;
+  margin-left: 3%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-bottom: 3%;
+  margin-bottom: 3%;
+  border-bottom: 2px solid rgb(248, 248, 248);
+}
+.responsive-discount-product-button {
+  font-size: 125%;
+  color: rgb(243, 149, 63);
+  font-weight: 600;
+  margin-left: 3%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-bottom: 3%;
+  margin-bottom: 3%;
+  border-bottom: 2px solid rgb(248, 248, 248);
+}
 .all-header {
   flex: 1;
   display: flex;
   align-items: center;
   border-bottom: 2px solid rgb(248, 248, 248);
   background-color: white;
+}
+.all-header-responsive-menu-open-button {
+  padding-left: 3%;
+  color: rgb(64, 64, 64);
+  font-size: 125%;
+  cursor: pointer;
+  display: none;
+}
+.open-menu-animation-class {
+  -webkit-animation: open 0.5s ease-in-out 0s 1 forwards;
+}
+.close-menu-animation-class {
+  -webkit-animation: close 0.5s ease-in-out 0s 1 forwards;
 }
 .header-logo {
   width: 10%;
@@ -87,6 +169,23 @@ body {
   cursor: pointer;
 }
 
+.all-header-search-wrapper {
+  width: 100%;
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  padding-left: 3%;
+  display: none;
+  border-bottom: 2px solid rgb(248, 248, 248);
+  background-color: white;
+}
+.all-header-search-wrapper i {
+  color: rgb(112, 112, 112);
+  font-size: 80%;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
 .search-wrapper {
   margin-left: auto;
   margin-right: 3%;
@@ -117,6 +216,8 @@ body {
   display: flex;
   width: 20%;
   margin-right: 3%;
+  justify-content: flex-end;
+  align-items: center;
 }
 .login-wrapper {
   display: flex;
@@ -154,4 +255,63 @@ body {
 
 .all-content {
   flex: 7;
+}
+
+@-webkit-keyframes open {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes close {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+@media only screen and (max-width: 1200px) and (min-width: 300px) {
+  .search-wrapper {
+    display: none;
+  }
+  .all-header-search-wrapper {
+    display: flex;
+  }
+  .search-input {
+    width: 95%;
+  }
+  .user-wrapper {
+    margin-left: auto;
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 300px) {
+  .user-wrapper {
+    width: 10%;
+  }
+  .login-button, .basket-button {
+    display: none;
+  }
+  .login-wrapper {
+    padding-right: 10px;
+  }
+  .basket-wrapper {
+    padding-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  .all-product-button, .new-product-button, .discount-product-button {
+    display: none;
+  }
+  .all-header-responsive-menu-open-button {
+    display: block;
+  }
 }
