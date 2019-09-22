@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   padding-top: 5%;
-  border-right: 3px solid rgb(248, 248, 248);
+  border-right: 2px solid rgb(236, 236, 236);
 }
 .main-wrapper-right-side {
   flex: 1;
@@ -37,7 +37,7 @@
 .main-input-wrapper {
   display: flex;
   align-items: center;
-  border: 2px solid rgb(248, 248, 248);
+  border: 2px solid rgb(236, 236, 236);
   background-color: white;
   width: 75%;
   height: 10%;
@@ -84,4 +84,45 @@
   justify-content: center;
   width: 75%;
   text-align: center;
+}
+
+@media only screen and (max-width: 1110px) and (min-width: 300px) {
+  .main-input-wrapper {
+    width: 100%;
+  }
+  .send-form-button {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 300px) {
+  .all-content {
+    flex-direction: column;
+    width: 100%;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  .main-wrapper-left-side {
+    border: none;
+    border-bottom: 2px solid rgb(236, 236, 236);
+    flex: initial;
+    width: 75%;
+    height: fit-content;
+    padding-bottom: 3%;
+  }
+  .main-wrapper-right-side {
+    flex: initial;
+    width: 75%;
+    height: fit-content;
+    padding-bottom: 10%;
+  }
+  .main-input-wrapper {
+    height: auto;
+    padding: 2%;
+    padding-left: 3%;
+  }
+  .send-form-button {
+    padding: 2%;
+    height: auto;
+  }
 }

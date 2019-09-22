@@ -50,7 +50,7 @@ body {
   height: 100%;
   position: absolute;
   background-color: white;
-  border-right: 2px solid rgb(248, 248, 248);
+  border-right: 2px solid rgb(236, 236, 236);
   transform: translateX(-100%);
 }
 .responsive-menu-header {
@@ -59,7 +59,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding-right: 3%;
-  border-bottom: 2px solid rgb(248, 248, 248);
+  border-bottom: 2px solid rgb(236, 236, 236);
 }
 .responsive-menu-header i {
   color: rgb(64, 64, 64);
@@ -82,7 +82,7 @@ body {
   cursor: pointer;
   padding-bottom: 3%;
   margin-bottom: 3%;
-  border-bottom: 2px solid rgb(248, 248, 248);
+  border-bottom: 2px solid rgb(236, 236, 236);
 }
 .responsive-all-product-button i {
   font-size: 80%;
@@ -98,7 +98,7 @@ body {
   cursor: pointer;
   padding-bottom: 3%;
   margin-bottom: 3%;
-  border-bottom: 2px solid rgb(248, 248, 248);
+  border-bottom: 2px solid rgb(236, 236, 236);
 }
 .responsive-discount-product-button {
   font-size: 125%;
@@ -110,13 +110,13 @@ body {
   cursor: pointer;
   padding-bottom: 3%;
   margin-bottom: 3%;
-  border-bottom: 2px solid rgb(248, 248, 248);
+  border-bottom: 2px solid rgb(236, 236, 236);
 }
 .all-header {
   flex: 1;
   display: flex;
   align-items: center;
-  border-bottom: 2px solid rgb(248, 248, 248);
+  border-bottom: 2px solid rgb(236, 236, 236);
   background-color: white;
 }
 .all-header-responsive-menu-open-button {
@@ -176,7 +176,8 @@ body {
   align-items: center;
   padding-left: 3%;
   display: none;
-  border-bottom: 2px solid rgb(248, 248, 248);
+  border-bottom: 2px solid rgb(236, 236, 236);
+  border-top: 2px solid rgb(236, 236, 236);
   background-color: white;
 }
 .all-header-search-wrapper i {
@@ -193,7 +194,7 @@ body {
   height: 40%;
   padding-left: 0.5%;
   padding-right: 0.5%;
-  border: 2px solid rgb(248, 248, 248);
+  border: 2px solid rgb(236, 236, 236);
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -282,6 +283,9 @@ body {
   }
   .all-header-search-wrapper {
     display: flex;
+  }
+  .all-header {
+    border: none;
   }
   .search-input {
     width: 95%;
