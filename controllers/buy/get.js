@@ -19,7 +19,6 @@ module.exports = (req, res) => {
       products.forEach(product => {
         price += parseFloat(product.price)
       });
-      console.log(price);
   
       return res.render('buy/index', {
         page: 'buy/index',

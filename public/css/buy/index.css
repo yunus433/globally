@@ -14,12 +14,23 @@
   color: rgb(64, 64, 64);
   font-size: 200%;
   font-weight: 700;
-  margin-bottom: 3%;
 }
 .form-line {
   display: flex;
   align-items: center;
   margin-bottom: 2%;
+}
+.form-info-title {
+  color: rgb(64, 64, 64);
+  font-size: 125%;
+  font-weight: 700;
+  margin-bottom: 1%;
+}
+.form-info {
+  font-size: 150%;
+  color: rgb(64, 64, 64);
+  font-weight: 300;
+  margin-bottom: 3%;
 }
 
 .main-input-title {
@@ -51,4 +62,49 @@
 .main-input-wrapper i {
   color: rgb(112, 112, 112);
   font-size: 90%;
+}
+
+.shipping-options-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2%;
+  margin-bottom: 3%;
+}
+.each-shipping-option {
+  font-size: 100%;
+  color: rgb(64, 64, 64);
+  font-weight: 600;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.each-shipping-option input {
+  margin-right: 10px;
+}
+.price-info {
+  font-size: 100%;
+  color: rgb(64, 64, 64);
+  font-weight: 300;
+  padding-left: 2%;
+}
+
+.button-wrapper {
+  width: 100%;
+  margin-bottom: 5%;
+}
+.send-button {
+  background-color: rgb(243, 149, 63);
+  font-size: 125%;
+  color: white;
+  font-weight: 600;
+  width: 20%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.send-button:hover {
+  background-color: rgb(87, 154, 40);
 }

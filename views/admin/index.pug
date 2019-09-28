@@ -1,0 +1,23 @@
+extends ./../partials/admin_header
+block main
+  .header-wrapper
+    .header-title-wrapper
+      span.header-title Siparişler Sayfası
+      span.header-info Bu sayfadan siparişleri görüntüleyebilirsiniz
+  .content-wrapper
+    each order in orders
+      .each-order
+        span.order-id ID: #{order._id}
+        span.product-title Sipariş Edilen Ürünler:
+        .products-wrapper
+          each product in order.productList
+            .each-product(id=product._id)
+              span.product-name= product.name
+        span.order-price Fiyat: #{order.totalPrice}
+        span.order-name Name: #{order.name} Surname: #{order.surName}
+        span.order-security-num TC: #{order.securityNumber}
+        span.order-phone Telefon Numarası: #{order.phone}
+        span.order-company Şirket: #{order.company}
+        span.order-city İl: #{order.city} İlçe: #{order.town}
+        span.order-address Adres: #{order.address}
+        span.order-shipping Kargo Seçeneği: #{order.shippingOption}
