@@ -20,4 +20,12 @@ window.onload = () => {
       document.querySelector(".responsive-menu-wrapper").classList.add("close-menu-animation-class");
     }
   });
+
+  document.addEventListener("mouseover", (event) => {
+    if (event.target.className == "all-product-button" || event.target.parentNode.className == "all-product-button" || event.target.parentNode.parentNode.className == "all-product-button") {
+      document.querySelector(".header-category-wrapper").style.display = "block";
+    } else {
+      document.querySelector(".header-category-wrapper").style.display = "none";
+    }
+  });
 }

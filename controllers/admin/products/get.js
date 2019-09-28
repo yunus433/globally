@@ -1,6 +1,6 @@
 const async = require('async');
 
-const Product = require("../../models/product/Product");
+const Product = require("../../../models/product/Product");
 
 module.exports = (req, res) => {
   if (!req.query.category)
@@ -25,17 +25,15 @@ module.exports = (req, res) => {
       (err, products) => {
         if (err) return res.redirect("/");
     
-        return res.render('index/index', {
-          page: 'index/index',
-          title: 'Ana Sayfa',
+        return res.render("admin/products", {
+          page: "admin/products",
+          title: "Ürünler",
           includes: {
-            external: ['js', 'css', 'fontawesome']
+            external: ["css", "js", "fontawesome", "admin"]
           },
-          user: req.session.user || undefined,
+          active_nav_button: "products",
           products,
-          category: req.query.category,
-          keywords: req.query.keywords,
-          basket: req.session.basket || []
+          user: req.session.user
         });
       }
     );

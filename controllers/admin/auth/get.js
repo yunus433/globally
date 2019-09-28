@@ -10,7 +10,7 @@ module.exports = (req, res) => {
 
   res.render('admin/auth', {
     page: 'admin/auth',
-    title: 'Admim Girişi',
+    title: 'Admin Girişi',
     includes: {
       external: ["css", "js", "fontawesome"]
     },

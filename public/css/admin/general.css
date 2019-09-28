@@ -1,0 +1,83 @@
+/* 
+Colors: 
+rgb(87, 154, 40); ana yeşil teması
+rgb(149, 193, 54); 
+rgb(200, 212, 65);
+rgb(243, 149, 63); turuncu
+rgb(205, 204, 204); gri
+rgb(39, 53, 131); mavi 
+*/
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;  
+  font-family: "Source Sans Pro";
+}
+html {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+	background-size: cover;
+}
+body {
+  font-family: "Source Sans Pro";
+  width: 100vw;
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  bottom: 0px;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.display-none {
+  display: none;
+}
+
+.all-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow-y: hidden;
+  background-color: rgb(253, 253, 253);
+}
+.all-nav-bar {
+  flex: 1;
+  width: 25%;
+  background-color: white;
+  border-right: 2px solid rgb(236, 236, 236);
+  display: flex;
+  flex-direction: column;
+  padding-top: 1%;
+}
+.header-logo {
+  width: auto;
+  max-width: 30%;
+  height: auto;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  cursor: pointer;
+}
+.each-nav-button {
+  padding: 4%;
+  color: rgb(64, 64, 64);
+  font-size: 100%;
+  border-bottom: 2px solid rgb(236, 236, 236);
+  text-decoration: none;
+}
+.each-nav-button:hover {
+  background-color: rgb(248, 248, 248);
+}
+.each-nav-button-active {
+  background-color: rgb(248, 248, 248);
+}
+
+.all-content {
+  flex: 4;
+  width: 75%;
+}

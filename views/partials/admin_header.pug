@@ -1,0 +1,10 @@
+extends ./../partials/head
+block content
+  .all-wrapper
+    .all-nav-bar
+      img.header-logo(src="/res/images/main_logo.png")
+      a.each-nav-button(class=(active_nav_button == "orders" ? "each-nav-button-active" : "") href="/admin") Siparişler Sayfası
+      a.each-nav-button(class=(active_nav_button == "products" ? "each-nav-button-active" : "") href="/admin/products") Ürünler Sayfası
+      a.each-nav-button(class=(active_nav_button == "notices" ? "each-nav-button-active" : "") href="/admin/notices") İlanlar Sayfası
+    .all-content
+      block main

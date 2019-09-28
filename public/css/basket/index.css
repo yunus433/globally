@@ -3,67 +3,56 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.notifications-wrapper {
-  height: 77vh;
-  margin-top: 2%;
+.main-inner-wrapper {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 2%;
+}
+.main-header {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  /* display: none; */
-}
-.each-notification {
-  width: 96%;
-  height: 100%;
-  display: flex;
-}
-.notification-content {
-  background-color: rgb(243, 149, 63);
-  color: white;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 3%;
-}
-.notification-title {
-  font-size: 400%;
-  font-weight: 600;
-}
-.notification-description {
-  font-size: 200%;
-  font-weight: 500;
-}
-.notification-image-wrapper {
-  flex: 2;
-  overflow: hidden;
-}
-.notification-image {
-  width: auto;
-  height: 100%;
-}
-
-.products-wrapper {
+  justify-content: space-between;
   padding-left: 2%;
   padding-right: 2%;
-  margin-top: 2%;
+}
+.main-title-wrapper {
   display: flex;
   flex-direction: column;
 }
-.products-title {
+.main-title {
   font-size: 200%;
   font-weight: 600;
   color: rgb(64, 64, 64);
 }
-.keywords-title {
+.main-info {
   font-size: 100%;
   color: rgb(64, 64, 64);
   font-weight: 300;
 }
-.products-inner-wrapper {
+.finish-button {
+  background-color: rgb(243, 149, 63);
+  font-size: 125%;
+  color: white;
+  font-weight: 600;
+  width: 20%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.finish-button:hover {
+  background-color: rgb(87, 154, 40);
+}
+
+
+.products-wrapper {
+  padding-left: 2%;
+  padding-right: 2%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-top: 2%;
-  margin-bottom: 10%;
 }
 .each-product {
   height: 50vh;
@@ -72,7 +61,6 @@
   background: white;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   text-decoration: none;
   border: 2px solid white;
   margin-bottom: 10%;
@@ -127,25 +115,6 @@
   font-size: 200%;
   font-weight: 700;
 }
-.add-to-basket-button {
-  background-color: rgb(87, 154, 40);
-  font-size: 125%;
-  color: white;
-  font-weight: 600;
-  width: 100%;
-  margin-top: auto;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-  visibility: hidden;
-}
-.add-to-basket-button:hover {
-  background-color: rgb(243, 149, 63);
-}
 .remove-from-basket-button {
   background-color: rgb(255, 0, 0);
   font-size: 125%;
@@ -161,6 +130,7 @@
   align-items: center;
   padding: 5px;
   visibility: hidden;
+  cursor: pointer;
 }
 .remove-from-basket-button:hover {
   background-color: rgb(220, 0, 0);

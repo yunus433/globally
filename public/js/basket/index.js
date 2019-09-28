@@ -20,19 +20,6 @@ window.onload = () => {
       document.querySelector(".responsive-menu-wrapper").classList.add("close-menu-animation-class");
     }
 
-    if (event.target.className == "add-to-basket-button" && event.target.id.length > 0) {
-      const xhr = new XMLHttpRequest();
-      xhr.open("POST", "/basket");
-      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-      xhr.send(JSON.stringify({
-          id: event.target.id
-      }));
-      setTimeout(() => {
-        event.target.innerHTML = "Sepetten Çıkar";
-        event.target.className = "remove-from-basket-button";
-      }, 100);
-    }
-
     if (event.target.className == "remove-from-basket-button" && event.target.id.length > 0) {
       const xhr = new XMLHttpRequest();
       xhr.open("POST", "/basket/remove");
@@ -40,9 +27,9 @@ window.onload = () => {
       xhr.send(JSON.stringify({
           id: event.target.id
       }));
+      event.target.id = "";
       setTimeout(() => {
-        event.target.innerHTML = "Sepete Ekle";
-        event.target.className = "add-to-basket-button";
+        event.target.parentNode.style.display = "none";
       }, 100);
     }
   });

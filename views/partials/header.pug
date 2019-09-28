@@ -13,8 +13,18 @@ block content
     .all-header
       i.fas.fa-bars.all-header-responsive-menu-open-button
       img.header-logo(src="/res/images/main_logo.png")
-      span.all-product-button Tüm Ürünler
+      span.all-product-button Kategoriler
         i.fas.fa-chevron-down
+        .header-category-wrapper
+          a.header-each-category(class=(category=="Tüm Ürünler" ? "active-each-category" : "") href="/") Tüm Ürünler
+          a.header-each-category(class=(category=="Profil" ? "active-each-category" : "") href="/?category=Profil") Profil
+          a.header-each-category(class=(category=="Dolaplar" ? "active-each-category" : "") href="/?category=Dolaplar") Dolaplar
+          a.header-each-category(class=(category=="Duş Tekneleri" ? "active-each-category" : "") href="/?category=Duş Tekneleri") Duş Tekneleri
+          a.header-each-category(class=(category=="Kabinler" ? "active-each-category" : "") href="/?category=Kabinler") Kabinler
+          a.header-each-category(class=(category=="Kabinler (5mm) Temperli" ? "active-each-category" : "") href="/?category=Kabinler (5mm) Temperli") Kabinler (5mm) Temperli
+          a.header-each-category(class=(category=="Kabinler (4mm) Temperli" ? "active-each-category" : "") href="/?category=Kabinler (4mm) Temperli") Kabinler (4mm) Temperli
+          a.header-each-category(class=(category=="Kabinler Polisteren" ? "active-each-category" : "") href="/?category=Kabinler Polisteren") Kabinler Polisteren
+          a.header-each-category(class=(category=="Menfezler" ? "active-each-category" : "") href="/?category=Menfezler") Menfezler
       span.new-product-button En Yeniler
       span.discount-product-button İndirimdekiler
       .search-wrapper
@@ -26,7 +36,7 @@ block content
           .login-button
             span Giriş Yap 
             span veya Üye Ol
-        a.basket-wrapper(href="/index/basket") 
+        a.basket-wrapper(href="/basket") 
           .basket-button
             span Alışveriş
             span Sepetim
