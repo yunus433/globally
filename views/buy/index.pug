@@ -1,0 +1,34 @@
+extends ./../partials/header
+block main
+  -console.log(user);
+  form.main-form(action="/buy" method="POST")
+    span.form-title Siparişi Tamamla:
+    .form-line
+      .main-input-wrapper
+        i.fas.fa-phone
+        input.main-input(type="text" name="phone" placeholder="Cep Tel." spellcheck="false" autocomplete="off")
+      .main-input-wrapper
+        i.fas.fa-id-card
+        input.main-input(type="text" name="tc" placeholder="TC Kimlik No" spellcheck="false" autocomplete="off")
+    .form-line
+      .main-input-wrapper
+        i.fas.fa-user
+        input.main-input(type="text" name="surname" placeholder="Ad" spellcheck="false" autocomplete="off")
+      .main-input-wrapper
+        i.fas.fa-user
+        input.main-input(type="text" name="name" placeholder="Soyad" spellcheck="false" autocomplete="off")
+    .form-line
+      .main-input-wrapper
+        i.fas.fa-building
+        input.main-input(type="text" name="company" placeholder="Şirket" spellcheck="false" autocomplete="off")
+    .form-line
+      .main-input-wrapper
+        i.fas.fa-map-marker-alt
+        input.main-input(type="text" name="city1" placeholder="İl" spellcheck="false" autocomplete="off")
+      .main-input-wrapper
+        i.fas.fa-map-marker-alt
+        input.main-input(type="text" name="city2" placeholder="İlçe" spellcheck="false" autocomplete="off")
+    .form-line
+      .main-input-wrapper
+        i.fas.fa-map-pin
+        input.main-input(type="text" name="address" placeholder="Adres" spellcheck="false" autocomplete="off")

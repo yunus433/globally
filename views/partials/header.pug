@@ -31,11 +31,18 @@ block content
         i.fas.fa-search
         input.search-input(type="text" placeholder="Ürün Ara" autocomplete="off")
       .user-wrapper
-        a.login-wrapper(href="/auth") 
-          i.fas.fa-user
-          .login-button
-            span Giriş Yap 
-            span veya Üye Ol
+        if (!user)
+          a.login-wrapper(href="/auth") 
+            i.fas.fa-user
+            .login-button
+              span Giriş Yap 
+              span veya Üye Ol
+        else
+          .login-wrapper(href="/auth") 
+            i.fas.fa-user
+            .login-button
+              span= user.email
+              span olarak giriş yapıldı
         a.basket-wrapper(href="/basket") 
           .basket-button
             span Alışveriş
