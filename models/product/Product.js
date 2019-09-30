@@ -30,38 +30,6 @@ const ProductSchema = new Schema({
   price: {
     type: String,
     default: ""
-  },
-  surName: {
-    type: String,
-    default: ""
-  },
-  securityNumber: {
-    type: String,
-    default: ""
-  },
-  phone: {
-    type: String,
-    default: ""
-  },
-  company: {
-    type: String,
-    default: ""
-  },
-  city: {
-    type: String,
-    default: ""
-  },
-  town: {
-    type: String,
-    default: ""
-  },
-  address: {
-    type: String,
-    default: ""
-  },
-  shippingOption: {
-    type: String,
-    default: ""
   }
 });
 

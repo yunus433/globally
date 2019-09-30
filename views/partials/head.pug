@@ -2,7 +2,7 @@ doctype html
 html(lang="tr")
   head
     meta(name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no")
-    title #{title} | Globally
+    title CeoGlobal | #{title}
     if includes && includes.external
       if includes.external.indexOf('fontawesome') > -1
         link(rel="stylesheet",
@@ -20,5 +20,5 @@ html(lang="tr")
       if includes.external.indexOf('admin') <= -1
         link(rel="stylesheet", href=`/css/general.css`)
     link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,200,300,400,500,600,700,800,900" rel="stylesheet")
-  bodyv
+  body
     block content

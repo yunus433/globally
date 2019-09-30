@@ -1,5 +1,14 @@
 extends ./../partials/header
 block main
+  .product-number-wrapper
+    span.product-number-title Sepete Ekle
+    span.product-number-info Lütfen eklemek istediğiniz ürün adedini girin
+    .product-number-input-wrapper
+      input.product-number-input(type="number" placeholder="Ürün Adedi" value="1")
+    span.product-number-error
+    .product-number-button-wrapper
+      .product-number-close-button Vazgeç
+      .product-number-send-button Sepete Ekle
   if category == "Tüm Ürünler" && !keywords
     .notifications-wrapper
       .each-notification

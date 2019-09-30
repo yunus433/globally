@@ -3,16 +3,16 @@ const async = require("async");
 const Product = require("../../models/product/Product");
 
 module.exports = (req, res) => {
+  let totalPrice = 0;
   if (!req.session.basket)
-    req.session.basket = [
-      "5d8b4ade61fa6e0854e256dc",
-      "5d8b73c8f443a2087b51ba2f"
-    ];
+    req.session.basket = [];
 
   async.times(
     req.session.basket.length,
     (time, next) => {
-      Product.findById(req.session.basket[time], (err, returnedProduct) => {
+      Product.findById(req.session.basket[time].id, (err, returnedProduct) => {
+        totalPrice += parseFloat(returnedProduct.price) * parseFloat(req.session.basket[time].number)
+        returnedProduct.number = req.session.basket[time].number;
         next(err, returnedProduct);
       });
     },
@@ -26,7 +26,8 @@ module.exports = (req, res) => {
           external: ['js', 'css', 'fontawesome']
         },
         user: req.session.user || undefined,
-        products
+        products,
+        totalPrice
       });
     }
   );

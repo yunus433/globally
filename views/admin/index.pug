@@ -12,8 +12,8 @@ block main
         .products-wrapper
           each product in order.productList
             .each-product(id=product._id)
-              span.product-name= product.name
-        span.order-price Fiyat: #{order.totalPrice}
+              span.product-name #{product.number} adet #{product.name}
+        span.order-price Toplam Fiyat: #{order.totalPrice}₺
         span.order-name Name: #{order.name} Surname: #{order.surName}
         span.order-security-num TC: #{order.securityNumber}
         span.order-phone Telefon Numarası: #{order.phone}

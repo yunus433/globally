@@ -20,47 +20,19 @@ window.onload = () => {
       document.querySelector(".responsive-menu-wrapper").classList.add("close-menu-animation-class");
     }
 
-    if (event.target.className == "remove-from-basket-button" && event.target.id.length > 0) {
+    if (event.target.classList.contains("remove-button") && event.target.parentNode.id.length > 0) {
       const xhr = new XMLHttpRequest();
       xhr.open("POST", "/basket/remove");
       xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       xhr.send(JSON.stringify({
-          id: event.target.id
+          id: event.target.parentNode.id
       }));
-      event.target.id = "";
-      setTimeout(() => {
-        event.target.parentNode.style.display = "none";
-      }, 100);
-    }
-  });
-
-  document.addEventListener("mouseout", (event) => {
-    if (event.target.className == "each-product") {
-      event.target.childNodes[4].style.visibility = "hidden";
-    } else if (event.target.parentNode.className == "each-product") {
-      event.target.parentNode.childNodes[4].style.visibility = "hidden";
-    } else if (event.target.parentNode.className == "each-product") {
-      event.target.parentNode.childNodes[4].style.visibility = "hidden";
-    } else if (event.target.parentNode.parentNode.className == "each-product") {
-      event.target.parentNode.parentNode.childNodes[4].style.visibility = "hidden";
-    } else if (event.target.parentNode.parentNode.parentNode.className == "each-product") {
-      event.target.parentNode.parentNode.parentNode.childNodes[4].style.visibility = "hidden";
+      event.target.parentNode.id = "";
+      event.target.parentNode.style.display = "none";
     }
   });
 
   document.addEventListener("mouseover", (event) => {
-    if (event.target.className == "each-product") {
-      event.target.childNodes[4].style.visibility = "visible";
-    } else if (event.target.parentNode.className == "each-product") {
-      event.target.parentNode.childNodes[4].style.visibility = "visible";
-    } else if (event.target.parentNode.className == "each-product") {
-      event.target.parentNode.childNodes[4].style.visibility = "visible";
-    } else if (event.target.parentNode.parentNode.className == "each-product") {
-      event.target.parentNode.parentNode.childNodes[4].style.visibility = "visible";
-    } else if (event.target.parentNode.parentNode.parentNode.className == "each-product") {
-      event.target.parentNode.parentNode.parentNode.childNodes[4].style.visibility = "visible";
-    }
-
     if (event.target.className == "all-product-button" || event.target.parentNode.className == "all-product-button" || event.target.parentNode.parentNode.className == "all-product-button") {
       document.querySelector(".header-category-wrapper").style.display = "block";
     } else {

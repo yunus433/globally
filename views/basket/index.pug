@@ -1,7 +1,9 @@
 extends ./../partials/header
 block main
+  input.display-none#total-price(type="text" value=totalPrice)
+  input.display-none#products(type="text" value=JSON.stringify(products))
   .main-inner-wrapper
-    if products.length > 0
+    if products.length
       .main-header
         .main-title-wrapper
           span.main-title Alışveriş Sepetim
@@ -13,10 +15,9 @@ block main
             .each-product-image-wrapper
               .each-product-image-inner-wrapper
                 img.product-image(src=product.productPhotoArray[0])
-            span.product-name #{product.name}
-            span.product-description #{product.description}
-            span.product-price #{product.price}₺
-            .remove-from-basket-button(id=product._id) Sepetten Çıkar
+            span.product-name #{product.number} adet #{product.name}
+            span.product-price #{parseFloat(product.price) * parseFloat(product.number)}₺
+            i.fas.fa-trash.remove-button
     else
       .main-header
         .main-title-wrapper

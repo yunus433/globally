@@ -21,6 +21,7 @@ module.exports = (req, res) => {
     if (err)
       return res.redirect("/");
       
+    req.session.basket = [];
     return res.redirect("/basket");
   });
 }

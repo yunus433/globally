@@ -11,26 +11,51 @@ window.onload = () => {
     }
   }, true);
 
+  const numberWrapper = document.querySelector(".product-number-wrapper");
+  const numberInput = document.querySelector(".product-number-input");
+  const numberError = document.querySelector(".product-number-error");
+
+  let clickedButton;
+  
   document.addEventListener("click", event => {
+    if (event.target.className == "product-number-send-button") {
+      if (numberInput.value && numberInput.value > 0) {
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "/basket");
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.send(JSON.stringify({
+            id: clickedButton.id,
+            number: numberInput.value
+        }));
+        clickedButton.innerHTML = "Sepetten Çıkar";
+        clickedButton.className = "remove-from-basket-button";
+        numberWrapper.style.display = "none";
+        numberError.innerHTML = "";
+        numberInput.value = 1;
+      } else {
+        numberError.innerHTML = "Lütfen sıfırdan büyük bir değer giriniz"
+      }
+    } else if (event.target.className == "product-number-close-button") {
+      numberWrapper.style.display = "none";
+      numberError.innerHTML = "";
+      numberInput.value = 1;
+    } else if (event.target.className != "product-number-wrapper" && event.target.parentNode.className != "product-number-wrapper" && event.target.parentNode.parentNode.className != "product-number-wrapper") {
+      numberWrapper.style.display = "none";
+      numberError.innerHTML = "";
+      numberInput.value = 1;
+    }
+
+    if (event.target.className == "add-to-basket-button" && event.target.id.length > 0) {
+      numberWrapper.style.display = "flex";
+      clickedButton = event.target;
+    }
+
     if (event.target.classList.contains("all-header-responsive-menu-open-button")) {
       document.querySelector(".responsive-menu-wrapper").classList.remove("close-menu-animation-class");
       document.querySelector(".responsive-menu-wrapper").classList.add("open-menu-animation-class");
     } else if (event.target.classList.contains("all-header-responsive-menu-close-button")) {
       document.querySelector(".responsive-menu-wrapper").classList.remove("open-menu-animation-class");
       document.querySelector(".responsive-menu-wrapper").classList.add("close-menu-animation-class");
-    }
-
-    if (event.target.className == "add-to-basket-button" && event.target.id.length > 0) {
-      const xhr = new XMLHttpRequest();
-      xhr.open("POST", "/basket");
-      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-      xhr.send(JSON.stringify({
-          id: event.target.id
-      }));
-      setTimeout(() => {
-        event.target.innerHTML = "Sepetten Çıkar";
-        event.target.className = "remove-from-basket-button";
-      }, 100);
     }
 
     if (event.target.className == "remove-from-basket-button" && event.target.id.length > 0) {
