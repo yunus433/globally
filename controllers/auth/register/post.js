@@ -16,11 +16,11 @@ module.exports = (req, res) => {
       
           newUser.save((err, user) => {
             if (err && err.code == 11000) {
-              req.session.register_error = "Bu e-posta adresi ile bir hesap zaten açılmış, lütfen başka bir e-posta adresi deneyin";
+              req.session.register_error = "Bu e-posta adresi ile bir hesap zaten açılmış, lütfen başka bir e-posta adresi deneyin.";
               return res.redirect("/auth");
             }
             if (err) {
-              req.session.register_error = "Bir hata oluştu, lütfen tekrar deneyin";
+              req.session.register_error = "Bir hata oluştu, lütfen tekrar deneyin.";
               return res.redirect("/auth");
             }
       
@@ -28,19 +28,19 @@ module.exports = (req, res) => {
             return res.redirect("/");
           });
         } else {
-          req.session.register_error = "Şifreniz 5 haneden uzun olmalıdır";
+          req.session.register_error = "Şifreniz 5 haneden uzun olmalıdır.";
           return res.redirect("/auth");
         }
       } else {
-        req.session.register_error = "Bu e-posta geçerli değil";
+        req.session.register_error = "Bu e-posta geçerli değil.";
         return res.redirect("/auth");
       }
     } else {
-      req.session.register_error = "Lütfen şifrenizi doğru bir şekilde tekrarlayın"
+      req.session.register_error = "Lütfen şifrenizi doğru bir şekilde tekrarlayın."
       return res.redirect("/auth");
     }
   } else {
-    req.session.register_error = "Lütfen bir e-posta ve şifre seçin ve şifrenizi tekrarlayın";
+    req.session.register_error = "Lütfen bir e-posta ve şifre seçin ve şifrenizi tekrarlayın.";
     return res.redirect('/auth');
   }
 }

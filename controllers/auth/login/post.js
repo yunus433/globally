@@ -4,7 +4,7 @@ module.exports = (req, res, next) => {
   if (req.body.email && req.body.password) {
     User.findUser(req.body.email, req.body.password, (err, user) => {
       if (err || !user) {
-        req.session.login_error = "Hesap bulunamadı, lütfen tekrar deneyin";
+        req.session.login_error = "Hesap bulunamadı, lütfen tekrar deneyin.";
         return res.redirect("/auth");
       }
   
@@ -15,7 +15,7 @@ module.exports = (req, res, next) => {
         return res.redirect("/");
     });
   } else {
-    req.session.login_error = "Lütfen e-posta adresinizi ve şifrenizi yazın";
+    req.session.login_error = "Lütfen e-posta adresinizi ve şifrenizi yazın.";
     return res.redirect("/auth");
   }
 }
