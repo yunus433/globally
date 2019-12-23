@@ -76,18 +76,17 @@ body {
   flex: 10;
   display: flex;
   flex-direction: column;
-  padding-top: 3%;
 }
 .responsive-all-product-button {
   font-size: 125%;
   color: rgb(64, 64, 64);
   font-weight: 600;
-  margin-left: 3%;
+  padding-left: 3%;
+  padding-top: 3%;
   display: flex;
   align-items: center;
   cursor: pointer;
   padding-bottom: 3%;
-  margin-bottom: 3%;
   border-bottom: 2px solid rgb(236, 236, 236);
 }
 .responsive-all-product-button i {
@@ -98,19 +97,20 @@ body {
   font-size: 125%;
   color: rgb(87, 154, 40);
   font-weight: 600;
-  margin-left: 3%;
+  padding-left: 3%;
   display: flex;
   align-items: center;
   cursor: pointer;
   padding-bottom: 3%;
   margin-bottom: 3%;
+  margin-top: 3%;
   border-bottom: 2px solid rgb(236, 236, 236);
 }
 .responsive-discount-product-button {
   font-size: 125%;
   color: rgb(243, 149, 63);
   font-weight: 600;
-  margin-left: 3%;
+  padding-left: 3%;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -142,6 +142,12 @@ body {
 .header-logo {
   width: auto;
   max-width: 10%;
+  max-height: 70%;
+  margin-left: 2%;
+}
+.responsive-header-logo {
+  width: auto;
+  max-width: 50%;
   max-height: 70%;
   margin-left: 2%;
 }
@@ -192,6 +198,20 @@ body {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   padding-bottom: 15px;
+}
+.header-category-wrapper-responsive {
+  width: 94%;
+  margin-left: 6%;
+  border-bottom: 2px solid rgb(236, 236, 236);
+  margin-top: -2px;
+  height: 0px;
+  overflow: hidden;
+}
+.open-bottom-animation-class {
+  -webkit-animation: openToBottom 0.5s ease-in-out 0s 1 forwards;
+}
+.close-up-animation-class {
+  -webkit-animation: closeToUp 0.5s ease-in-out 0s 1 forwards;
 }
 .header-each-category {
   display: block;
@@ -308,6 +328,24 @@ body {
   }
 }
 
+@-webkit-keyframes openToBottom {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 300px;
+  }
+}
+
+@-webkit-keyframes closeToUp {
+  from {
+    height: 300px;
+  }
+  to {
+    height: 0px;
+  }
+}
+
 @-webkit-keyframes close {
   from {
     transform: translateX(0px);
@@ -358,5 +396,11 @@ body {
   }
   .all-header-responsive-menu-open-button {
     display: block;
+  }
+  .header-logo {
+    height: auto;
+    max-width: 20%;
+    display: flex;
+    align-items: center;
   }
 }

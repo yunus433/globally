@@ -85,7 +85,7 @@
 }
 
 .notifications-wrapper {
-  height: 77vh;
+  height: 80%;
   margin-top: 2%;
   display: flex;
   justify-content: center;
@@ -245,4 +245,46 @@
 }
 .remove-from-basket-button:hover {
   background-color: rgb(243, 149, 63);
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1000px) {
+  .notification-title {
+    font-size: 300%;
+  }
+  .notification-description {
+    font-size: 150%;
+  }
+  .notifications-wrapper {
+    height: 60%;
+  }
+  .products-inner-wrapper {
+    grid-template-columns: 33% 33% 33%;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 300px) {
+  .notification-title {
+    font-size: 200%;
+  }
+  .notification-description {
+    font-size: 100%;
+  }
+  .notifications-wrapper {
+    height: 50%;
+  }
+  .products-inner-wrapper {
+    grid-template-columns: 33% 33% 33%;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .notifications-wrapper {
+    display: none;
+  }
+  .products-inner-wrapper {
+    grid-template-columns: 50% 50%;
+  }
+  .product-number-wrapper {
+    width: 80vw;
+  }
 }

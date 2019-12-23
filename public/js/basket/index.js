@@ -30,6 +30,18 @@ window.onload = () => {
       event.target.parentNode.id = "";
       event.target.parentNode.style.display = "none";
     }
+
+    if (event.target.className == "responsive-all-product-button" || event.target.parentNode.className == "responsive-all-product-button") {
+      const categoryWrapperResponsive = document.querySelector(".header-category-wrapper-responsive");
+
+      if (categoryWrapperResponsive.classList.contains("open-bottom-animation-class")) {
+        categoryWrapperResponsive.classList.remove("open-bottom-animation-class");
+        categoryWrapperResponsive.classList.add("close-up-animation-class");
+      } else {
+        categoryWrapperResponsive.classList.add("open-bottom-animation-class");
+        categoryWrapperResponsive.classList.remove("close-up-animation-class");
+      }
+    }
   });
 
   document.addEventListener("mouseover", (event) => {

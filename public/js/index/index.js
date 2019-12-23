@@ -58,6 +58,18 @@ window.onload = () => {
       document.querySelector(".responsive-menu-wrapper").classList.add("close-menu-animation-class");
     }
 
+    if (event.target.className == "responsive-all-product-button" || event.target.parentNode.className == "responsive-all-product-button") {
+      const categoryWrapperResponsive = document.querySelector(".header-category-wrapper-responsive");
+
+      if (categoryWrapperResponsive.classList.contains("open-bottom-animation-class")) {
+        categoryWrapperResponsive.classList.remove("open-bottom-animation-class");
+        categoryWrapperResponsive.classList.add("close-up-animation-class");
+      } else {
+        categoryWrapperResponsive.classList.add("open-bottom-animation-class");
+        categoryWrapperResponsive.classList.remove("close-up-animation-class");
+      }
+    }
+
     if (event.target.className == "remove-from-basket-button" && event.target.id.length > 0) {
       const xhr = new XMLHttpRequest();
       xhr.open("POST", "/basket/remove");
