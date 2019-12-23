@@ -4,8 +4,8 @@
 }
 .main-wrapper-left-side {
   flex: 1;
-  padding-right: 3%;
-  padding-left: 3%;
+  padding-right: 4%;
+  padding-left: 4%;
   height: 80%;
   display: flex;
   flex-direction: column;
@@ -14,8 +14,8 @@
 }
 .main-wrapper-right-side {
   flex: 1;
-  padding-right: 3%;
-  padding-left: 3%;
+  padding-right: 4%;
+  padding-left: 4%;
   height: 80%;
   display: flex;
   flex-direction: column;
@@ -75,6 +75,38 @@
   outline-color: rgb(243, 149, 63);
 }
 
+.responsive-header {
+  display: none;
+  margin-top: 4%;
+  margin-left: 4%;
+  width: 80%;
+  align-self: flex-start;
+}
+.left-side-open-button {
+  padding: 2%;
+  border: 2px solid rgb(136, 136, 136);
+  border-top-right-radius: 20px;
+  flex: 1;
+  z-index: 2;
+  cursor: pointer;
+  background-color: white;
+}
+.right-side-open-button {
+  padding: 2%;
+  border: 2px solid rgb(205, 204, 204);
+  border-top-right-radius: 20px;
+  padding-left: 6%;
+  margin-left: -5%;
+  flex: 1;
+  cursor: pointer;
+  background-color: white;
+}
+.left-side-open-button span, .right-side-open-button span {
+  color: rgb(64, 64, 64);
+  font-size: 150%;
+  font-weight: 700;
+}
+
 .error-wrapper {
   margin-top: 2%;
   color: rgb(243, 149, 63);
@@ -124,5 +156,23 @@
   .send-form-button {
     padding: 2%;
     height: auto;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .main-wrapper-left-side, .main-wrapper-right-side {
+    width: 100%;
+  }
+  .main-title {
+    display: none;
+  }
+  .responsive-header {
+    display: flex;
+  }
+  .main-wrapper-right-side {
+    display: none;
+  }
+  .main-wrapper-left-side {
+    border: none;
   }
 }

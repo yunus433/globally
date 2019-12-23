@@ -1,5 +1,10 @@
 extends ./../partials/header
 block main
+  .responsive-header
+    .left-side-open-button
+      span Üye Girişi
+    .right-side-open-button
+      span Üye Ol
   form.main-wrapper-left-side(action="/auth/login" method="POST")
     span.main-title Üye Girişi
     span.main-input-title E-Posta Adresi
