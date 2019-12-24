@@ -127,7 +127,7 @@
   }
 }
 
-@media only screen and (max-width: 800px) and (min-width: 300px) {
+@media only screen and (max-width: 900px) and (min-width: 300px) {
   .all-content {
     flex-direction: column;
     width: 100%;
@@ -159,7 +159,7 @@
   }
 }
 
-@media only screen and (orientation: portrait) {
+@media only screen and (max-width: 900px) and (min-width: 300px) {
   .main-wrapper-left-side, .main-wrapper-right-side {
     width: 100%;
   }

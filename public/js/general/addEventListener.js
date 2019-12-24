@@ -2,12 +2,32 @@ addEventListener = (document) => {
   document.addEventListener("focus", event => {
     if (event.target.tagName == "INPUT") {
       event.target.parentNode.style.borderColor = "rgb(39, 53, 131)";
+      if (navigator.userAgent.match(/Android/i)
+      || navigator.userAgent.match(/webOS/i)
+      || navigator.userAgent.match(/iPhone/i)
+      || navigator.userAgent.match(/iPad/i)
+      || navigator.userAgent.match(/iPod/i)
+      || navigator.userAgent.match(/BlackBerry/i)
+      || navigator.userAgent.match(/Windows Phone/i)
+      ) {
+        document.querySelector('.all-header').style.display = 'none';
+      }
     }
   }, true);
 
   document.addEventListener("focusout", event => {
     if (event.target.tagName == "INPUT") {
       event.target.parentNode.style.borderColor = "rgb(236, 236, 236)";
+      if (navigator.userAgent.match(/Android/i)
+      || navigator.userAgent.match(/webOS/i)
+      || navigator.userAgent.match(/iPhone/i)
+      || navigator.userAgent.match(/iPad/i)
+      || navigator.userAgent.match(/iPod/i)
+      || navigator.userAgent.match(/BlackBerry/i)
+      || navigator.userAgent.match(/Windows Phone/i)
+      ) {
+        document.querySelector('.all-header').style.display = 'flex';
+      }
     }
   }, true);
   

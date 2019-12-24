@@ -19,7 +19,8 @@ window.onload = () => {
         }));
         clickedButton.innerHTML = "Sepetten Çıkar";
         clickedButton.className = "remove-from-basket-button";
-        numberWrapper.style.display = "none";
+        numberWrapper.classList.add('popUpCloseAnimationClass');
+        numberWrapper.classList.remove('popUpOpenAnimationClass');
         numberError.innerHTML = "";
         numberInput.value = 1;
       } else {
@@ -30,7 +31,7 @@ window.onload = () => {
       numberWrapper.classList.remove('popUpOpenAnimationClass');
       numberError.innerHTML = "";
       numberInput.value = 1;
-    } else if (event.target.className != "product-number-wrapper" && event.target.parentNode.className != "product-number-wrapper" && event.target.parentNode.parentNode.className != "product-number-wrapper") {
+    } else if (event.target.classList.contains("product-number-wrapper") && event.target.parentNode.classList.contains("product-number-wrapper") && event.target.parentNode.parentNode.classList.contains("product-number-wrapper")) {
       numberWrapper.classList.add('popUpCloseAnimationClass');
       numberWrapper.classList.remove('popUpOpenAnimationClass');
       numberError.innerHTML = "";

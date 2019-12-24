@@ -4,7 +4,7 @@ block main
     span.product-number-title Sepete Ekle
     span.product-number-info Lütfen eklemek istediğiniz ürün adedini girin.
     .product-number-input-wrapper
-      input.product-number-input(type="number" placeholder="Ürün Adedi" value="1")
+      input.product-number-input(type="number" pattern="[0-9]*" placeholder="Ürün Adedi" value="1")
     span.product-number-error
     .product-number-button-wrapper
       .product-number-close-button Vazgeç

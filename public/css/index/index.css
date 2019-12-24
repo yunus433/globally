@@ -294,6 +294,18 @@
   .products-inner-wrapper {
     grid-template-columns: 33% 33% 33%;
   }
+  .each-product-image-wrapper {
+    width: 26vw;
+  }
+  .product-name {
+    font-size: 125%;
+  }
+  .product-description {
+    font-size: 90%;
+  }
+  .product-price {
+    font-size: 175%;
+  }
 }
 
 @media only screen and (max-width: 800px) and (min-width: 300px) {
@@ -304,9 +316,25 @@
     display: none;
   }
   .products-inner-wrapper {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 100%;
   }
   .product-number-wrapper {
     width: 90vw;
+  }
+  .each-product-image-wrapper {
+    width: 90vw;
+  }
+  .each-product {
+    padding-top: 5%;
+    margin-bottom: 2%;
+  }
+  .product-name {
+    font-size: 125%;
+  }
+  .product-description {
+    font-size: 90%;
+  }
+  .product-price {
+    font-size: 175%;
   }
 }
