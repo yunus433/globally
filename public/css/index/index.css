@@ -253,13 +253,13 @@
     margin-top: 125vh;
   }
   to {
-    margin-top: 50vh;
+    margin-top: 25vh;
   }
 }
 
 @-webkit-keyframes popUpClose {
   from {
-    margin-top: 50vh;
+    margin-top: 25vh;
   }
   to {
     margin-top: 125vh;
@@ -326,7 +326,7 @@
   }
   .each-product {
     padding-top: 5%;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
   }
   .product-name {
     font-size: 125%;

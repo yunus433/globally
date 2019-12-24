@@ -44,7 +44,8 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   /* background-color: rgb(253, 253, 253); */
   background-color: white;
 }

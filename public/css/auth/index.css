@@ -157,6 +157,9 @@
     padding: 2%;
     height: auto;
   }
+  .error-wrapper {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 900px) and (min-width: 300px) {

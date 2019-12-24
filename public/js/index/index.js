@@ -31,11 +31,6 @@ window.onload = () => {
       numberWrapper.classList.remove('popUpOpenAnimationClass');
       numberError.innerHTML = "";
       numberInput.value = 1;
-    } else if (event.target.classList.contains("product-number-wrapper") && event.target.parentNode.classList.contains("product-number-wrapper") && event.target.parentNode.parentNode.classList.contains("product-number-wrapper")) {
-      numberWrapper.classList.add('popUpCloseAnimationClass');
-      numberWrapper.classList.remove('popUpOpenAnimationClass');
-      numberError.innerHTML = "";
-      numberInput.value = 1;
     }
 
     if (event.target.className == "add-to-basket-button" && event.target.id.length > 0) {
