@@ -1,4 +1,7 @@
 addEventListener = (document) => {
+  const viewHeight = window.innerHeight;
+  const viewWidth = window.innerWidth;
+
   document.addEventListener("focus", event => {
     if (event.target.tagName == "INPUT") {
       event.target.parentNode.style.borderColor = "rgb(39, 53, 131)";
@@ -10,7 +13,7 @@ addEventListener = (document) => {
       || navigator.userAgent.match(/BlackBerry/i)
       || navigator.userAgent.match(/Windows Phone/i)
       ) {
-        document.querySelector('.all-header').style.display = 'none';
+        document.querySelector('meta').content = `height=${viewHeight}px, width=${viewWidth}px, initial-scale=1.0, shrink-to-fit=no, user-scalable=no`
       }
     }
   }, true);
@@ -18,16 +21,6 @@ addEventListener = (document) => {
   document.addEventListener("focusout", event => {
     if (event.target.tagName == "INPUT") {
       event.target.parentNode.style.borderColor = "rgb(236, 236, 236)";
-      if (navigator.userAgent.match(/Android/i)
-      || navigator.userAgent.match(/webOS/i)
-      || navigator.userAgent.match(/iPhone/i)
-      || navigator.userAgent.match(/iPad/i)
-      || navigator.userAgent.match(/iPod/i)
-      || navigator.userAgent.match(/BlackBerry/i)
-      || navigator.userAgent.match(/Windows Phone/i)
-      ) {
-        document.querySelector('.all-header').style.display = 'flex';
-      }
     }
   }, true);
   
