@@ -76,4 +76,9 @@ addEventListener = (document) => {
       window.location = "/?keywords=" + searchInput.value;
     }
   }
+
+  window.onresize = () => {
+    const htmlHeight = document.querySelector('html').style.innerHeight;
+    document.querySelector('body').style.innerHeight = htmlHeight;
+  }
 }

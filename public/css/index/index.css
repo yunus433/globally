@@ -262,7 +262,7 @@
   }
 }
 
-@media only screen and (max-width: 1000px) and (min-width: 300px) {
+@media only screen and (max-width: 1000px) and (min-width: 800px) {
   .notification-title {
     font-size: 200%;
   }
@@ -277,7 +277,10 @@
   }
 }
 
-@media only screen and (orientation: portrait) {
+@media only screen and (max-width: 800px) and (min-width: 300px) {
+  .products-inner-wrapper {
+    grid-template-columns: 33% 33% 33%;
+  }
   .notifications-wrapper {
     display: none;
   }

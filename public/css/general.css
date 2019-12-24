@@ -189,17 +189,14 @@ body {
   cursor: pointer;
 }
 .header-category-wrapper {
-  background: white;
   width: 40vw;
   position: absolute;
   top: 7.3%;
   padding-top: 1%;
-  border: 2px solid rgb(236, 236, 236);
-  border-top: 0px;
+  border-bottom: 2px solid rgb(236, 236, 236);
   display: none;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  padding-bottom: 15px;
 }
 .header-category-wrapper-responsive {
   width: 94%;
@@ -219,12 +216,14 @@ body {
   display: block;
   padding-top: 2%;
   padding-bottom: 5px;
-  border-top: 2px solid rgb(236, 236, 236);
+  border: 2px solid rgb(236, 236, 236);
+  border-bottom: 0px;
   text-decoration: none;
   color: rgb(64, 64, 64);
   font-size: 100%;
   font-weight: 600;
   padding-left: 15px;
+  background-color: white;
 }
 .header-each-category:hover {
   background-color: rgb(248, 248, 248);
@@ -389,6 +388,9 @@ body {
   }
   .basket-wrapper {
     padding-left: 10px;
+  }
+  .header-category-wrapper {
+    width: 60vw;
   }
 }
 
