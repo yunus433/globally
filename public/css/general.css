@@ -44,7 +44,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: hidden;
   /* background-color: rgb(253, 253, 253); */
   background-color: white;
 }
@@ -59,6 +59,7 @@ body {
   background-color: white;
   border-right: 2px solid rgb(236, 236, 236);
   transform: translateX(-100%);
+  z-index: 10;
 }
 .responsive-menu-header {
   flex: 1;
@@ -130,7 +131,7 @@ body {
 .all-header-responsive-menu-open-button {
   padding-left: 3%;
   color: rgb(64, 64, 64);
-  font-size: 125%;
+  font-size: 150%;
   cursor: pointer;
   display: none;
 }
@@ -144,7 +145,7 @@ body {
   width: auto;
   max-width: 10%;
   max-height: 70%;
-  margin-left: 2%;
+  margin-left: 4%;
 }
 .responsive-header-logo {
   width: auto;
