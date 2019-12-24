@@ -26,17 +26,20 @@ window.onload = () => {
         numberError.innerHTML = "Lütfen sıfırdan büyük bir değer giriniz"
       }
     } else if (event.target.className == "product-number-close-button") {
-      numberWrapper.style.display = "none";
+      numberWrapper.classList.add('popUpCloseAnimationClass');
+      numberWrapper.classList.remove('popUpOpenAnimationClass');
       numberError.innerHTML = "";
       numberInput.value = 1;
     } else if (event.target.className != "product-number-wrapper" && event.target.parentNode.className != "product-number-wrapper" && event.target.parentNode.parentNode.className != "product-number-wrapper") {
-      numberWrapper.style.display = "none";
+      numberWrapper.classList.add('popUpCloseAnimationClass');
+      numberWrapper.classList.remove('popUpOpenAnimationClass');
       numberError.innerHTML = "";
       numberInput.value = 1;
     }
 
     if (event.target.className == "add-to-basket-button" && event.target.id.length > 0) {
-      numberWrapper.style.display = "flex";
+      numberWrapper.classList.add('popUpOpenAnimationClass');
+      numberWrapper.classList.remove('popUpCloseAnimationClass');
       clickedButton = event.target;
     }
 
