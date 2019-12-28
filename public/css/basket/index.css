@@ -41,6 +41,8 @@
   padding: 10px;
   cursor: pointer;
   text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
 }
 .finish-button:hover {
   background-color: rgb(243, 149, 63);
@@ -63,8 +65,9 @@
   border: 2px solid white;
   margin-bottom: 2%;
   border: 2px solid rgb(236, 236, 236);
-  width: 75%;
+  width: 80%;
   align-items: center;
+  border-radius: 5px;
 }
 .each-product-image-wrapper {
   height: 8vh;
@@ -113,4 +116,56 @@
   font-size: 200%;
   font-weight: 700;
   margin-left: 2%;
+}
+
+@media only screen and (max-width: 900px) and (min-width: 800px) {
+  .finish-button {
+    font-size: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 700px) {
+  .each-product {
+    width: 100%;
+  }
+  .finish-button {
+    font-size: 90%;
+  }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 500px) {
+  .each-product {
+    width: 100%;
+  }
+  .finish-button {
+    width: 32%;
+    margin-left: 2%;
+    font-size: 125%;
+  }
+  .product-price {
+    font-size: 150%;
+  }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 300px) {
+  .each-product {
+    width: 100%;
+  }
+  .finish-button {
+    width: 50%;
+    font-size: 100%;
+  }
+  .product-price {
+    font-size: 125%;
+  }
+  .remove-button {
+    margin-left: 5px;
+  }
+  .main-header {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .each-product-image-wrapper {
+    width: 10vw;
+  }
 }
