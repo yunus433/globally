@@ -29,7 +29,7 @@ block main
               img.product-image(src=product.productPhotoArray[0])
           span.product-name #{product.name}
           span.product-description #{product.description}
-          span.product-price #{product.price}₺
+          span.product-price #{product.price} ₺/adet
           if (!basket.includes(product._id.toString()))
             .add-to-basket-button(id=product._id) Sepete Ekle
           else
