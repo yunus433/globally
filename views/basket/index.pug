@@ -16,7 +16,7 @@ block main
               .each-product-image-inner-wrapper
                 img.product-image(src=product.productPhotoArray[0])
             span.product-name #{product.number} adet #{product.name}
-            span.product-price #{parseFloat(product.price) * parseFloat(product.number)}₺
+            span.product-price #{parseFloat(product.price) * parseFloat(product.number)} ₺/#{product.type}
             i.fas.fa-trash.remove-button
     else
       .main-header

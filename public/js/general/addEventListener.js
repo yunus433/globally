@@ -5,16 +5,16 @@ addEventListener = (document) => {
   document.addEventListener("focus", event => {
     if (event.target.tagName == "INPUT") {
       event.target.parentNode.style.borderColor = "rgb(39, 53, 131)";
-      if (navigator.userAgent.match(/Android/i)
-      || navigator.userAgent.match(/webOS/i)
-      || navigator.userAgent.match(/iPhone/i)
-      || navigator.userAgent.match(/iPad/i)
-      || navigator.userAgent.match(/iPod/i)
-      || navigator.userAgent.match(/BlackBerry/i)
-      || navigator.userAgent.match(/Windows Phone/i)
-      ) {
-        document.querySelector('meta').content = `height=${viewHeight}px, width=${viewWidth}px, initial-scale=1.0, shrink-to-fit=no, user-scalable=no`
-      }
+      // if (navigator.userAgent.match(/Android/i)
+      // || navigator.userAgent.match(/webOS/i)
+      // || navigator.userAgent.match(/iPhone/i)
+      // || navigator.userAgent.match(/iPad/i)
+      // || navigator.userAgent.match(/iPod/i)
+      // || navigator.userAgent.match(/BlackBerry/i)
+      // || navigator.userAgent.match(/Windows Phone/i)
+      // ) {
+      //   document.querySelector('meta').content = `height=${viewHeight}px, width=${viewWidth}px, initial-scale=1.0, shrink-to-fit=no, user-scalable=no`
+      // }
     }
   }, true);
 
