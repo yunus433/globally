@@ -57,6 +57,20 @@ block main
           span Menfezler
       span.input-title Ürün ismi
       input.form-input(type="text" name="name" placeholder="Ürün İsmi" required autocomplete="off")
+      span.input-title Ürün tipi
+      .category-wrapper
+        label.each-category
+          input(type="radio" required name="type" value="paket")
+          span Paket
+        label.each-category
+          input(type="radio" required name="type" value="boy")
+          span Boy
+        label.each-category
+          input(type="radio" required name="type" value="metre")
+          span Metre
+        label.each-category
+          input(type="radio" required name="type" value="adet")
+          span Adet
       span.input-title Ürün Açıklaması
       textarea.form-input(type="text" name="description" placeholder="Ürün Açıklaması" required autocomplete="off")
       span.input-title Anahtar Kelimeler (Bu kelimeler arama sonuçları listelenirken kullanılacaktır.)

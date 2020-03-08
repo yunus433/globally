@@ -1,5 +1,13 @@
 window.onload = () => {
   addEventListener(document);
+  
+  document.addEventListener('click', (event) => {
+    if (event.target.className == 'product-menu-image') {
+      event.target.parentNode.parentNode.childNodes[0].childNodes[0].src = event.target.src;
+      event.target.parentNode.querySelector('.selected-menu-image').classList.remove('selected-menu-image');
+      event.target.classList.add('selected-menu-image');
+    }
+  });
 
   const numberWrapper = document.querySelector(".product-number-wrapper");
   const numberInput = document.querySelector(".product-number-input");
@@ -52,5 +60,25 @@ window.onload = () => {
         event.target.className = "add-to-basket-button";
       }, 100);
     }
+
+    if (event.target.className == "add-to-basket-button-main" && event.target.id.length > 0) {
+      event.preventDefault();
+      numberWrapper.classList.add('popUpOpenAnimationClass');
+      numberWrapper.classList.remove('popUpCloseAnimationClass');
+      clickedButton = event.target;
+    }
+
+    if (event.target.className == "remove-from-basket-button-main" && event.target.id.length > 0) {
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", "/basket/remove");
+      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      xhr.send(JSON.stringify({
+          id: event.target.id
+      }));
+      setTimeout(() => {
+        event.target.innerHTML = "Sepete Ekle";
+        event.target.className = "add-to-basket-button";
+      }, 100);
+    }
   });
-}
+};

@@ -7,6 +7,10 @@ const ProductSchema = new Schema({
     required: true,
     type: String
   },
+  type: {
+    type: String,
+    default: "adet"
+  },
   createdAt: {
     type: Number,
     default: Date.now()

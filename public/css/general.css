@@ -280,12 +280,12 @@ body {
 .search-input {
   border: none;
   font-size: 100%;
-  color: rgb(112, 112, 112);
+  color: rgb(64, 64, 64);
   outline: none;
   width: 90%;
 }
 .search-wrapper i {
-  color: rgb(112, 112, 112);
+  color: rgb(64, 64, 64);
   font-size: 80%;
   margin-right: 5px;
   cursor: pointer;
@@ -294,7 +294,7 @@ body {
 .user-wrapper {
   display: flex;
   width: 20%;
-  margin-right: 3%;
+  margin-right: 4%;
   justify-content: flex-end;
   align-items: center;
 }

@@ -29,6 +29,7 @@ module.exports = (req, res, next) => {
   const newProductData = {
     category: req.body.category,
     name: req.body.name,
+    type: req.body.type,
     description: req.body.description,
     price: req.body.price,
     productPhotoArray,

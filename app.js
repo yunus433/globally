@@ -6,7 +6,6 @@ const favicon = require('serve-favicon');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const expressSession = require('express-session');
-const socketIO = require('socket.io');
 const cloudinary = require('cloudinary');
 
 // create server
@@ -19,6 +18,7 @@ const mongoUri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/globally"
 
 // require local route controllers
 const indexRouteController = require('./routes/indexRoute');
+const detailsRouteController = require('./routes/detailsRoute');
 const basketRouteController = require('./routes/basketRoute');
 const authRouteController = require('./routes/authRoute');
 const adminRouteController = require('./routes/adminRoute');
@@ -84,6 +84,7 @@ app.use((req, res, next) => {
 
 // add route controllers
 app.use('/', indexRouteController);
+app.use('/details', detailsRouteController);
 app.use('/basket', basketRouteController);
 app.use('/auth', authRouteController);
 app.use('/admin', adminRouteController);
