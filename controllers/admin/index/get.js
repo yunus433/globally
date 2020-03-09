@@ -5,7 +5,7 @@ module.exports = (req, res) => {
     .find({})
     .sort({"createdAt": 1})
     .then(orders => {
-      res.render('admin/index', {
+      return res.render('admin/index', {
         page: 'admin/index',
         title: 'Admin Ana Sayfa',
         includes: {

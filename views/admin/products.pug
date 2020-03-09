@@ -8,7 +8,7 @@ block main
   .content-wrapper
     .products-wrapper
       each product in products
-        .each-product-wrapper
+        a.each-product-wrapper(href=`/admin/details?id=${product._id}`)
           .product-left-side
             .product-image-wrapper
               img.main-product-image(src=product.productPhotoArray[0])

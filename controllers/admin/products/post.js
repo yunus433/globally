@@ -1,6 +1,6 @@
 const Product = require("../../../models/product/Product");
 
-function uploadToCloudinary(req, nameArray) {
+uploadToCloudinary = (req, nameArray) => {
   nameArray.forEach(name => {
     req.cloudinary.v2.uploader.upload(
       "./public/res/uploads/" + name,

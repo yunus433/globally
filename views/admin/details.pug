@@ -1,0 +1,67 @@
+extends ./../partials/admin_header
+block main
+  input.display-none#product(value=JSON.stringify(product))
+  .header-wrapper
+    .header-title-wrapper
+      span.header-title= product.name
+      span.header-info Bu sayfadan ürünü düzenleyebilirsiniz
+  .content-wrapper
+    form.edit-product-form(action=`/admin/details?id=${product._id}` method="POST")
+      span.form-title Ürünü Düzenle
+      span.input-title Kategori
+      .category-wrapper
+        label.each-category
+          input.category-input(type="radio" required name="category" value="Profil")
+          span Profil
+        label.each-category
+          input.category-input(type="radio" required name="category" value="Dolaplar")
+          span Dolaplar
+        label.each-category
+          input.category-input(type="radio" required name="category" value="Duş Tekneleri")
+          span Duş Tekneleri
+        label.each-category
+          input.category-input(type="radio" required name="category" value="Küvetler")
+          span Küvetler
+        label.each-category
+          input.category-input(type="radio" required name="category" value="Kabinler (5mm) Temperli")
+          span Kabinler (5mm) Temperli
+        label.each-category
+          input.category-input(type="radio" required name="category" value="Kabinler (4mm) Temperli")
+          span Kabinler (4mm) Temperli
+        label.each-category
+          input.category-input(type="radio" required name="category" value="Kabinler Polisteren")
+          span Kabinler Polisteren
+        label.each-category
+          input.category-input(type="radio" required name="category" value="Menfezler")
+          span Menfezler
+      span.input-title Ürün ismi
+      input.form-input(type="text" name="name" placeholder="Ürün İsmi" required autocomplete="off" value=product.name)
+      span.input-title Ürün tipi
+      .category-wrapper
+        label.each-category
+          input.type-input(type="radio" required name="type" value="paket")
+          span Paket
+        label.each-category
+          input.type-input(type="radio" required name="type" value="boy")
+          span Boy
+        label.each-category
+          input.type-input(type="radio" required name="type" value="metre")
+          span Metre
+        label.each-category
+          input.type-input(type="radio" required name="type" value="adet")
+          span Adet
+      span.input-title Ürün Açıklaması
+      textarea.form-input(type="text" name="description" placeholder="Ürün Açıklaması" required autocomplete="off")= product.description
+      span.input-title Anahtar Kelimeler (Bu kelimeler arama sonuçları listelenirken kullanılacaktır.)
+      textarea.form-input(type="text" name="keywords" placeholder="Anahtar Kelimeler (Aralarda boşluk bırakarak yazınız)" required autocomplete="off")= product.keywords.join(" ")
+      span.input-title Fiyat
+      input.form-input(type="text" name="price" placeholder="Fiyat" required autocomplete="off" value=product.price)
+      span.input-title Ürün Fotoğrafları (max 5)
+      .images-outer-wrapper
+        .images-wrapper
+          input.display-none#file-name-array(type="text" name="productPhotoNameArray")
+          label.add-new-button
+            i.fas.fa-plus
+            input.display-none#product-image-input(type="file" name="photo" accept="image/*")
+      .form-send-wrapper
+        button.send-form-button Kaydet

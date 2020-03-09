@@ -32,8 +32,7 @@ module.exports = (req, res) => {
             external: ["css", "js", "fontawesome", "admin"]
           },
           active_nav_button: "products",
-          products,
-          user: req.session.user
+          products
         });
       }
     );
