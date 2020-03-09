@@ -1,6 +1,4 @@
 .all-content {
-  display: flex;
-  flex-direction: column;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
@@ -93,6 +91,7 @@
   width: 75%;
   margin-top: 25px;
   margin-left: 2%;
+  margin-bottom: 25px;
   display: flex;
 }
 
@@ -146,7 +145,7 @@
   margin-bottom: 5px;
   color: rgb(64, 64, 64);
   font-size: 175%;
-  font-weight: 700; 
+  font-weight: 700;
 }
 .product-description {
   font-size: 125%;
