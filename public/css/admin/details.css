@@ -140,6 +140,16 @@
   max-width: 100%;
   border-radius: 15px;
 }
+.each-product-edit-icon {
+  align-self: flex-start;
+  font-size: 15px;
+  margin-left: 5px;
+  color: rgba(112, 112, 112, 0.7);
+  cursor: pointer;
+}
+.each-product-edit-icon:hover {
+  color: rgb(112, 112, 112);
+}
 
 .form-send-wrapper {
   display: flex;
