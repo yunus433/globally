@@ -5,6 +5,7 @@ block main
     .header-title-wrapper
       span.header-title= product.name
       span.header-info Bu sayfadan ürünü düzenleyebilirsiniz
+    a.delete-product-button(href=`/admin/details/delete?id=${product._id}`) Ürünü Sil
   .content-wrapper
     form.edit-product-form(action=`/admin/details?id=${product._id}` method="POST")
       span.form-title Ürünü Düzenle

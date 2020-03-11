@@ -15,6 +15,7 @@ const authPostController = require('../controllers/admin/auth/post');
 const productsPhotoPostController = require('../controllers/admin/products/postPhoto');
 const productsPostController = require('../controllers/admin/products/post');
 const detailsPostController = require('../controllers/admin/details/post');
+const deletePostController = require('../controllers/admin/details/delete');
 const detailsAddPhotoPostController = require('../controllers/admin/details/postPhoto');
 const detailsDeletePhotoPostController = require('../controllers/admin/details/deletePhoto');
 
@@ -36,6 +37,11 @@ router.get(
   '/details',
   isAdmin,
   detailsGetController
+);
+router.get(
+  '/details/delete',
+  isAdmin,
+  deletePostController
 );
 
 router.post(
