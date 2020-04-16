@@ -211,6 +211,12 @@
   font-size: 200%;
   font-weight: 700;
 }
+.product-is-dolar {
+  color: rgb(243, 149, 63);
+  font-size: 100%;
+  font-weight: 300;
+  margin-left: 10px;
+}
 .add-to-basket-button {
   background-color: rgb(87, 154, 40);
   font-size: 125%;

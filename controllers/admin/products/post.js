@@ -33,7 +33,8 @@ module.exports = (req, res, next) => {
     description: req.body.description,
     price: req.body.price,
     productPhotoArray,
-    keywords: req.body.keywords.toLowerCase().split(" ")
+    keywords: req.body.keywords.toLocaleLowerCase().split(" ").concat(req.body.name.toLocaleLowerCase().split(" ")),
+    isDolar: req.body.isDolar ? true : false
   };
 
   const newProduct = new Product(newProductData);

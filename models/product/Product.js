@@ -34,6 +34,10 @@ const ProductSchema = new Schema({
   price: {
     type: String,
     default: ""
+  },
+  isDolar: {
+    type: Boolean,
+    default: false
   }
 });
 

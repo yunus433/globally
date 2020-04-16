@@ -25,7 +25,7 @@ block main
           .product-right-side
             span.main-product-title= product.name
             span.main-product-description Ürün Açıklaması: #{product.description}
-            span.main-product-price Ürün Fiyatı: #{product.price}
+            span.main-product-price Ürün Fiyatı: #{product.price} #{product.isDolar ? "$" : "₺"} / #{product.type}
   .new-product-form-wrapper
     form.new-product-form(action="/admin/products" method="POST")
       span.form-title Yeni Ürün Ekle (Lütfen tüm alanları doldurun)
@@ -89,6 +89,8 @@ block main
       textarea.form-input(type="text" name="keywords" placeholder="Anahtar Kelimeler (Aralarda boşluk bırakarak yazınız)" required autocomplete="off")
       span.input-title Fiyat
       input.form-input(type="text" name="price" placeholder="Fiyat" required autocomplete="off")
+      span.input-title Ürün Fiyatı Dolar Cinsinden Mi Olacak?
+      input.form-input(type="checkbox" name="isDolar")
       span.input-title Ürün Fotoğrafları (max 5)
       .images-outer-wrapper
         .images-wrapper
