@@ -60,12 +60,20 @@ block main
         label.each-category
           input(type="radio" required name="type" value="membran")
           span Membran
+        label.each-category
+          input(type="radio" required name="type" value="rulo")
+          span Rulo
       span.input-title Ürün Açıklaması
       textarea.form-input(type="text" name="description" placeholder="Ürün Açıklaması" required autocomplete="off")= product.description
       span.input-title Anahtar Kelimeler (Bu kelimeler arama sonuçları listelenirken kullanılacaktır.)
       textarea.form-input(type="text" name="keywords" placeholder="Anahtar Kelimeler (Aralarda boşluk bırakarak yazınız)" required autocomplete="off")= product.keywords.join(" ")
       span.input-title Fiyat
       input.form-input(type="text" name="price" placeholder="Fiyat" required autocomplete="off" value=product.price)
+      span.input-title Ürün Fiyatı Dolar Cinsinden Mi Olacak?
+      if product.isDolar
+        input.form-input(type="checkbox" name="isDolar" checked)
+      else
+        input.form-input(type="checkbox" name="isDolar")
       span.input-title Ürün Fotoğrafları (max 5)
       .images-outer-wrapper
         .images-wrapper

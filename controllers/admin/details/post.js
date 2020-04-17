@@ -15,7 +15,8 @@ module.exports = (req, res) => {
     category: req.body.category,
     keywords: req.body.keywords,
     description: req.body.description,
-    price: req.body.price
+    price: req.body.price,
+    isDolar: (req.body.isDolar ? true : false)
   }}, {upsert: true}, (err, product) => {
     if (err) return res.redirect('/');
 
