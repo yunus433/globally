@@ -23,6 +23,7 @@ const basketRouteController = require('./routes/basketRoute');
 const authRouteController = require('./routes/authRoute');
 const adminRouteController = require('./routes/adminRoute');
 const buyRouteController = require('./routes/buyRoute');
+const aboutusRouteController = require('./routes/aboutusRoute');
 
 // config dotenv files
 dotenv.config({ path: path.join(__dirname, ".env") });
@@ -89,6 +90,7 @@ app.use('/basket', basketRouteController);
 app.use('/auth', authRouteController);
 app.use('/admin', adminRouteController);
 app.use('/buy', buyRouteController);
+app.use('/aboutus', aboutusRouteController);
 
 // start server
 server.listen(PORT, () => {

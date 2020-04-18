@@ -108,6 +108,7 @@ body {
   margin-bottom: 3%;
   margin-top: 3%;
   border-bottom: 2px solid rgb(236, 236, 236);
+  text-decoration: none;
 }
 .responsive-discount-product-button {
   font-size: 125%;
@@ -178,6 +179,7 @@ body {
   display: flex;
   align-items: center;
   cursor: pointer;
+  text-decoration: none;
 }
 .discount-product-button {
   font-size: 125%;

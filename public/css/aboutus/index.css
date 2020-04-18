@@ -1,0 +1,43 @@
+.all-content {
+  display: flex;
+  padding: 0% 4%;
+  overflow: hidden;
+}
+
+.all-content-left-wrapper {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  margin-bottom: 35px;
+}
+.all-content-header {
+  margin-top: 35px;
+  color: rgb(39, 53, 131);
+  font-weight: 700;
+  font-size: 175%;
+}
+.all-content-text {
+  margin-top: 15px;
+  color: rgb(64, 64, 64);
+  font-size: 125%;
+}
+
+.all-content-right-wrapper {
+  flex: 2;
+  height: 80vh;
+  overflow: hidden;
+  padding: 35px 0px;
+  margin-left: 25px;
+  margin-bottom: 25px;
+}
+.all-content-right-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (orientation: portrait) {
+  .all-content-right-wrapper {
+    display: none;
+  }
+}
