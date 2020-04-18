@@ -145,7 +145,6 @@ body {
 .header-logo {
   width: auto;
   max-width: 10%;
-  max-height: 70%;
   margin-left: 4%;
 }
 .responsive-header-logo {
@@ -284,6 +283,13 @@ body {
   outline: none;
   width: 90%;
 }
+.search-input-responsive {
+  border: none;
+  font-size: 100%;
+  color: rgb(64, 64, 64);
+  outline: none;
+  width: 90%;
+}
 .search-wrapper i {
   color: rgb(64, 64, 64);
   font-size: 80%;
@@ -350,13 +356,13 @@ body {
     height: 0px;
   }
   to {
-    height: 288px;
+    height: 150px;
   }
 }
 
 @-webkit-keyframes closeToUp {
   from {
-    height: 288px;
+    height: 150px;
   }
   to {
     height: 0px;

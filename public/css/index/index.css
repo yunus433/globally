@@ -89,7 +89,7 @@
 }
 
 .notifications-wrapper {
-  height: 80%;
+  height: 60vh;
   margin-top: 2%;
   display: flex;
   justify-content: center;
@@ -100,32 +100,18 @@
   width: 100%;
   height: 100%;
   display: flex;
-}
-.notification-content {
-  background-color: rgb(243, 149, 63);
-  color: white;
-  flex: 1;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-left: 3%;
+  background: url("/res/images/main_page.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;  
 }
-.notification-title {
-  font-size: 400%;
-  font-weight: 600;
-}
-.notification-description {
+.each-notification-content {
+  margin-left: 25px;
+  margin-top: 25px;
   font-size: 200%;
-  font-weight: 500;
-}
-.notification-image-wrapper {
-  flex: 2;
-  overflow: hidden;
-  width: 100%;
-}
-.notification-image {
-  width: auto;
-  height: 100%;
+  color: rgb(39, 56, 119);
+  font-weight: 700;
 }
 
 .products-wrapper {
@@ -290,31 +276,19 @@
   }
 }
 
-@media only screen and (max-width: 1200px) and (min-width: 1000px) {
-  .notification-title {
-    font-size: 300%;
-  }
-  .notification-description {
-    font-size: 150%;
-  }
+@media only screen and (orientation: portrait) {
   .notifications-wrapper {
-    height: 60%;
+    height: 40vh;
   }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1000px) {
   .products-inner-wrapper {
     grid-template-columns: 33% 33% 33%;
   }
 }
 
 @media only screen and (max-width: 1000px) and (min-width: 800px) {
-  .notification-title {
-    font-size: 200%;
-  }
-  .notification-description {
-    font-size: 100%;
-  }
-  .notifications-wrapper {
-    height: 50%;
-  }
   .products-inner-wrapper {
     grid-template-columns: 33% 33% 33%;
   }
@@ -335,9 +309,6 @@
 @media only screen and (max-width: 800px) and (min-width: 300px) {
   .products-inner-wrapper {
     grid-template-columns: 33% 33% 33%;
-  }
-  .notifications-wrapper {
-    display: none;
   }
   .products-inner-wrapper {
     grid-template-columns: 100%;

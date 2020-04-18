@@ -38,23 +38,26 @@ block main
           input(type="radio" required name="category" value="Dolaplar")
           span Dolaplar
         label.each-category
-          input(type="radio" required name="category" value="Duş Tekneleri")
-          span Duş Tekneleri
-        label.each-category
-          input(type="radio" required name="category" value="Küvetler")
-          span Küvetler
-        label.each-category
-          input(type="radio" required name="category" value="Kabinler (5mm) Temperli")
-          span Kabinler (5mm) Temperli
-        label.each-category
-          input(type="radio" required name="category" value="Kabinler (4mm) Temperli")
-          span Kabinler (4mm) Temperli
-        label.each-category
-          input(type="radio" required name="category" value="Kabinler Polisteren")
-          span Kabinler Polisteren
-        label.each-category
-          input(type="radio" required name="category" value="Menfezler")
-          span Menfezler
+          input(type="radio" required name="category" value="Profil Aksesuarları")
+          span Profil Aksesuarları
+        //- label.each-category
+        //-   input(type="radio" required name="category" value="Duş Tekneleri")
+        //-   span Duş Tekneleri
+        //- label.each-category
+        //-   input(type="radio" required name="category" value="Küvetler")
+        //-   span Küvetler
+        //- label.each-category
+        //-   input(type="radio" required name="category" value="Kabinler (5mm) Temperli")
+        //-   span Kabinler (5mm) Temperli
+        //- label.each-category
+        //-   input(type="radio" required name="category" value="Kabinler (4mm) Temperli")
+        //-   span Kabinler (4mm) Temperli
+        //- label.each-category
+        //-   input(type="radio" required name="category" value="Kabinler Polisteren")
+        //-   span Kabinler Polisteren
+        //- label.each-category
+        //-   input(type="radio" required name="category" value="Menfezler")
+        //-   span Menfezler
       span.input-title Ürün ismi
       input.form-input(type="text" name="name" placeholder="Ürün İsmi" required autocomplete="off")
       span.input-title Ürün tipi
@@ -83,6 +86,9 @@ block main
         label.each-category
           input(type="radio" required name="type" value="rulo")
           span Rulo
+        label.each-category
+          input(type="radio" required name="type" value="top")
+          span Top
       span.input-title Ürün Açıklaması
       textarea.form-input(type="text" name="description" placeholder="Ürün Açıklaması" required autocomplete="off")
       span.input-title Anahtar Kelimeler (Bu kelimeler arama sonuçları listelenirken kullanılacaktır.)

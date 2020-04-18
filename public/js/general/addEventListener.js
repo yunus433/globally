@@ -89,4 +89,14 @@ addEventListener = (document) => {
       window.location = "/?keywords=" + searchInput.value;
     }
   }
+
+  const searchInputResponsive = document.querySelector(".search-input-responsive");
+  searchInputResponsive.onkeypress = (event) => {
+    if (!event) event = window.event;
+    const keyCode = event.keyCode || event.which;
+
+    if (keyCode == '13') {
+      window.location = "/?keywords=" + searchInputResponsive.value;
+    }
+  }
 }
