@@ -68,21 +68,18 @@
   border-radius: 5px;
 }
 .each-product-image-wrapper {
-  height: 8vh;
-  width: 5vw;
-  overflow: hidden;
+  height: 20vh;
+  width: 15vw;
   display: flex;
   align-items: center;
+  justify-content: center;
   align-self: center;
   background: white;
-  margin-right: 15px;
+  border-radius: 15px;
+  overflow: hidden;
 }
-.each-product-image-inner-wrapper {
-  width: 100%;
-}
-.product-image {
-  width: 100%;
-  min-height: 100%;
+.each-product-image {
+  height: 100%;
 }
 .product-name {
   font-size: 100%;
