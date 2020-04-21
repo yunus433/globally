@@ -10,6 +10,7 @@ const indexGetController = require('../controllers/admin/index/get');
 const authGetController = require('../controllers/admin/auth/get');
 const productsGetController = require('../controllers/admin/products/get');
 const detailsGetController = require('../controllers/admin/details/get');
+const categoriesGetController = require('../controllers/admin/categories/get');
 
 const authPostController = require('../controllers/admin/auth/post');
 const productsPhotoPostController = require('../controllers/admin/products/postPhoto');
@@ -18,6 +19,7 @@ const detailsPostController = require('../controllers/admin/details/post');
 const deletePostController = require('../controllers/admin/details/delete');
 const detailsAddPhotoPostController = require('../controllers/admin/details/postPhoto');
 const detailsDeletePhotoPostController = require('../controllers/admin/details/deletePhoto');
+const categoriesPostController = require('../controllers/admin/categories/post');
 
 router.get(
   '/',
@@ -42,6 +44,11 @@ router.get(
   '/details/delete',
   isAdmin,
   deletePostController
+);
+router.get(
+  '/categories',
+  isAdmin,
+  categoriesGetController
 );
 
 router.post(
@@ -74,6 +81,12 @@ router.post(
   '/details/photo/delete',
   isAdmin,
   detailsDeletePhotoPostController
+);
+router.post(
+  '/categories',
+  upload.single('file'),
+  isAdmin,
+  categoriesPostController
 );
 
 module.exports = router;

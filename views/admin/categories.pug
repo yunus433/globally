@@ -1,0 +1,39 @@
+extends ./../partials/admin_header
+block main
+  .header-wrapper
+    .header-title-wrapper
+      span.header-title Kategoriler Sayfası
+      span.header-info Bu sayfadan yeni kategoriler ekleyebilir veya bir kategoriyi düzenleyebilirsiniz. Düzenlemek için kategorinin üzerine tıklayın.
+    .new-category-button Yeni Kategori Ekle
+  .content-wrapper
+    .categories-wrapper
+      each category in categories
+        a.each-category-wrapper(href=`/admin/categories/details?id=${category._id}`)
+          .category-left-side
+            .category-image-wrapper
+              img.main-category-image(src=category.profilePhoto)
+          .category-right-side
+            span.main-category-title= category.name
+            span.main-category-description Ürün Sayısı: #{category.products.length}
+  .new-category-form-wrapper
+    form.new-category-form(action="/admin/categories" method="POST" enctype="multipart/form-data")
+      span.form-title Yeni Kategori Ekle (Lütfen tüm alanları doldurun)
+      span.input-title Genel Kategori (Bu kategoriye eklediğiniz tüm ürünler bu genel kategori altında listelenecektir)
+      .category-wrapper
+        label.each-category
+          input(type="radio" required name="category" value="Profil")
+          span Profil
+        label.each-category
+          input(type="radio" required name="category" value="Dolaplar")
+          span Dolaplar
+        label.each-category
+          input(type="radio" required name="category" value="Profil Aksesuarları")
+          span Profil Aksesuarları
+      span.input-title Kategori ismi
+      input.form-input(type="text" name="name" placeholder="Kategori İsmi" required autocomplete="off")
+      span.input-title Kategori Fotoğrafı
+      input(type="file" name="file" accept="image/*" required)
+      .form-send-wrapper
+        .back-button Geri
+        button.send-form-button Oluştur
+

@@ -11,34 +11,16 @@ block main
       span.form-title Ürünü Düzenle
       span.input-title Kategori
       .category-wrapper
-        label.each-category
-          input.category-input(type="radio" required name="category" value="Profil")
-          span Profil
-        label.each-category
-          input.category-input(type="radio" required name="category" value="Dolaplar")
-          span Dolaplar
-        label.each-category
-          input(type="radio" required name="category" value="Profil Aksesuarları")
-          span Profil Aksesuarları
-      //-   label.each-category
-      //-     input.category-input(type="radio" required name="category" value="Duş Tekneleri")
-      //-     span Duş Tekneleri
-      //-   label.each-category
-      //-     input.category-input(type="radio" required name="category" value="Küvetler")
-      //-     span Küvetler
-      //-   label.each-category
-      //-     input.category-input(type="radio" required name="category" value="Kabinler (5mm) Temperli")
-      //-     span Kabinler (5mm) Temperli
-      //-   label.each-category
-      //-     input.category-input(type="radio" required name="category" value="Kabinler (4mm) Temperli")
-      //-     span Kabinler (4mm) Temperli
-      //-   label.each-category
-      //-     input.category-input(type="radio" required name="category" value="Kabinler Polisteren")
-      //-     span Kabinler Polisteren
-      //-   label.each-category
-      //-     input.category-input(type="radio" required name="category" value="Menfezler")
-      //-     span Menfezler
-      //- span.input-title Ürün ismi
+        each category in categories
+          if product.category == category.name
+            label.each-category
+              input(type="radio" checked required name="category" value=category._id.toString())
+              span= category.name
+          else
+            label.each-category
+              input(type="radio" required name="category" value=category._id.toString())
+              span= category.name
+      span.input-title Ürün ismi
       input.form-input(type="text" name="name" placeholder="Ürün İsmi" required autocomplete="off" value=product.name)
       span.input-title Ürün tipi
       .category-wrapper

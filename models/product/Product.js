@@ -19,6 +19,10 @@ const ProductSchema = new Schema({
     type: String,
     required: true
   },
+  generalCategory: {
+    type: String,
+    default: ""
+  },
   productPhotoArray: {
     type: Array,
     required: true

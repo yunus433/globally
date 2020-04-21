@@ -98,7 +98,7 @@ body {
 }
 .responsive-new-product-button {
   font-size: 125%;
-  color: rgb(87, 154, 40);
+  color: rgb(64, 64, 64);
   font-weight: 600;
   padding-left: 3%;
   display: flex;
@@ -112,7 +112,7 @@ body {
 }
 .responsive-discount-product-button {
   font-size: 125%;
-  color: rgb(243, 149, 63);
+  color: rgb(64, 64, 64);
   font-weight: 600;
   padding-left: 3%;
   display: flex;
@@ -173,7 +173,7 @@ body {
 }
 .new-product-button {
   font-size: 125%;
-  color: rgb(87, 154, 40);
+  color: rgb(64, 64, 64);
   font-weight: 600;
   margin-left: 2%;
   display: flex;
@@ -181,9 +181,12 @@ body {
   cursor: pointer;
   text-decoration: none;
 }
+.new-product-button:hover {
+  text-decoration: underline;
+}
 .discount-product-button {
   font-size: 125%;
-  color: rgb(243, 149, 63);
+  color: rgb(64, 64, 64);
   font-weight: 600;
   margin-left: 2%;
   display: flex;
