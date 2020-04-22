@@ -59,7 +59,7 @@ const ProductSchema = new Schema({
     type: String,
     default: ""
   },
-  saleAmout: {
+  saleAmount: {
     type: String,
     default: ""
   }

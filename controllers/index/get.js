@@ -33,6 +33,7 @@ module.exports = (req, res) => {
           },
           user: req.session.user || undefined,
           products,
+          windowProducts: products,
           category: req.query.category,
           keywords: req.query.keywords,
           basket: req.session.basket || [],

@@ -9,9 +9,36 @@ block main
     .product-number-button-wrapper
       .product-number-close-button Vazgeç
       .product-number-send-button Sepete Ekle
-  if category == "Tüm Ürünler" && !keywords
-    .notifications-wrapper
-      .each-notification
+  if category == "Tüm Ürünler" && !keywords && windowProducts && windowProducts.length
+    span.window-title Vitrindekiler
+    .window-wrapper
+      each product in windowProducts
+        a.each-window-item(href=`/details?id=${product._id}`)
+          .window-item-sale-line
+            if product.onSale
+              span.window-sale-text -#{product.saleAmount}%
+            else
+              span.window-sale-text-empty
+          .window-product-image-wrapper
+            img.window-product-image(src=product.productPhotoArray[0])
+          span.window-product-name= product.name
+          span.window-product-description= product.description
+          if product.onSale
+            span.window-product-old-price #{product.price}₺
+            span.window-product-price #{product.salePrice}₺/#{product.type}
+          else
+            span.window-product-price #{product.price} ₺/#{product.type}
+        .each-window-separator
+        //- a.each-window-item(href=`/details?id=${product._id}`)
+        //-   .window-item-sale-line
+        //-     span.window-sale-text -50%
+        //-   .window-product-image-wrapper
+        //-     img.window-product-image(src="https://res.cloudinary.com/dvnac86j8/image/upload/v1558412742/globally/product_images/f3d448fbde654c1658d6b158a4525e87.jpg")
+        //-   span.window-product-name  Katsura
+        //-   span.window-product-description 100cm
+        //-   span.window-product-old-price 10,50
+        //-   span.window-product-price 5,25 ₺/adet
+        //- .each-window-separator
   .products-wrapper
     span.products-title= category
     if keywords

@@ -11,6 +11,9 @@ const authGetController = require('../controllers/admin/auth/get');
 const productsGetController = require('../controllers/admin/products/get');
 const detailsGetController = require('../controllers/admin/details/get');
 const categoriesGetController = require('../controllers/admin/categories/get');
+const windowGetController = require('../controllers/admin/window/get');
+const windowAddGetController = require('../controllers/admin/window/add');
+const windowDeleteGetController = require('../controllers/admin/window/delete');
 
 const authPostController = require('../controllers/admin/auth/post');
 const productsPhotoPostController = require('../controllers/admin/products/postPhoto');
@@ -49,6 +52,21 @@ router.get(
   '/categories',
   isAdmin,
   categoriesGetController
+);
+router.get(
+  '/window',
+  isAdmin,
+  windowGetController
+);
+router.get(
+  '/window/add',
+  isAdmin,
+  windowAddGetController
+);
+router.get(
+  '/window/delete',
+  isAdmin,
+  windowDeleteGetController
 );
 
 router.post(

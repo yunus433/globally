@@ -5,6 +5,7 @@ block main
     .header-title-wrapper
       span.header-title= product.name
       span.header-info Bu sayfadan ürünü düzenleyebilirsiniz
+    a.add-to-window-button(href=`/admin/window/add?id=${product._id}`) Vitrine Ekle
     a.delete-product-button(href=`/admin/details/delete?id=${product._id}`) Ürünü Sil
   .content-wrapper
     form.edit-product-form(action=`/admin/details?id=${product._id}` method="POST")
@@ -62,6 +63,13 @@ block main
         input.form-input(type="checkbox" name="isDolar" checked)
       else
         input.form-input(type="checkbox" name="isDolar")
+      span.input-title Ürünü indirimli olarak işaretle (Girdiğiniz indirim miktarının geçerli olması için önce ürünü indirimli olarak işaretlemelisiniz.)
+      if product.onSale
+        input.form-input(type="checkbox" name="onSale" checked)
+      else
+        input.form-input(type="checkbox" name="onSale")
+      span.input-title İndirim Miktarı % (Lütfen indirim miktarını yüzde üzerinden girin. ör: 50)
+      input.form-input(type="text" name="saleAmount" placeholder="İndirim Miktarı" required autocomplete="off" value=product.saleAmount)
       span.input-title Ürün Fotoğrafları (max 5)
       .images-outer-wrapper
         .images-wrapper
