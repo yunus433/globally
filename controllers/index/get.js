@@ -13,7 +13,7 @@ module.exports = (req, res) => {
     "category": req.query.category,
     "keywords": req.query.keywords
   }, (err, latestProducts) => {
-    if (err) return res.redirect("/");
+    if (err) return console.log(err);
   
     async.times(
       latestProducts.length,
@@ -23,21 +23,27 @@ module.exports = (req, res) => {
         });
       },
       (err, products) => {
-        if (err) return res.redirect("/");
+        if (err) return console.log(err);
     
-        return res.render('index/index', {
-          page: 'index/index',
-          title: 'Ana Sayfa',
-          includes: {
-            external: ['js', 'css', 'fontawesome']
-          },
-          user: req.session.user || undefined,
-          products,
-          windowProducts: products,
-          category: req.query.category,
-          keywords: req.query.keywords,
-          basket: req.session.basket || [],
-          currency: 7
+        Product.find({
+          onWindow: true
+        }, (err, windowProducts) => {
+          if (err) return console.log(err);
+
+          return res.render('index/index', {
+            page: 'index/index',
+            title: 'Ana Sayfa',
+            includes: {
+              external: ['js', 'css', 'fontawesome']
+            },
+            user: req.session.user || undefined,
+            products,
+            windowProducts,
+            category: req.query.category,
+            keywords: req.query.keywords,
+            basket: req.session.basket || [],
+            currency: 7
+          });
         });
       }
     );
