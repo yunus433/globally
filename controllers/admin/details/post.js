@@ -13,10 +13,10 @@ module.exports = (req, res) => {
   Product.findById(mongoose.Types.ObjectId(req.query.id), (err, product) => {
     if (err) return res.redirect('/admin');
 
-    Category.findByIdAndUpdate(mongoose.Types.ObjectId(product.category), {$pull: {
-      products: product._id.toString()
-    }}, {}, err => {
-      if (err) return res.redirect('/admin');
+    // Category.findByIdAndUpdate(mongoose.Types.ObjectId(product.category), {$pull: {
+    //   products: product._id.toString()
+    // }}, {}, err => {
+    //   if (err) return res.redirect('/admin');
 
       Category.findByIdAndUpdate(mongoose.Types.ObjectId(req.body.category), {$push: {
         products: product._id.toString()
@@ -38,6 +38,6 @@ module.exports = (req, res) => {
           return res.redirect(`/admin/details?id=${product._id}`);
         });
       });
-    });
+    // });
   });
 }
