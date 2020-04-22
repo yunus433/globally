@@ -10,6 +10,7 @@ module.exports = (req, res) => {
       includes: {
         external: ['js', 'css', 'fontawesome', 'admin']
       },
+      active_nav_button: "categories",
       user: req.session.user || undefined,
       categories
     });

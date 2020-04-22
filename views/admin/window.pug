@@ -1,0 +1,18 @@
+extends ./../partials/admin_header
+block main
+  .header-wrapper
+    .header-title-wrapper
+      span.header-title Vitrindekiler Sayfası
+      span.header-info Bu sayfadan vitrindeki ürünlerin sırasını değiştirebilir veya vitrindeki ürünleri silebilirsiniz. Yeni bir ürün eklemek için lütfen Ürünler Sayfası'na gidin.
+  .content-wrapper
+    each product in products
+      .each-product-wrapper
+        .product-image-wrapper
+          img.product-image(src=product.productPhotoArray[0])
+        span.product-name= product.name
+        span.product-description= product.description
+        a.delete-product-button
+          i.fas.fa-trash
+        .change-order-buttons
+          i.fas.fa-up
+          i.fas.fa-down

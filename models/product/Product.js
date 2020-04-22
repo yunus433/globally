@@ -19,6 +19,10 @@ const ProductSchema = new Schema({
     type: String,
     required: true
   },
+  categoryName: {
+    type: String,
+    required: true
+  },
   generalCategory: {
     type: String,
     default: ""
@@ -42,6 +46,22 @@ const ProductSchema = new Schema({
   isDolar: {
     type: Boolean,
     default: false
+  },
+  onWindow: {
+    type: Boolean,
+    default: false
+  },
+  onSale: {
+    type: Boolean,
+    default: false
+  },
+  salePrice: {
+    type: String,
+    default: ""
+  },
+  saleAmout: {
+    type: String,
+    default: ""
   }
 });
 

@@ -12,7 +12,7 @@ block main
       span.input-title Kategori
       .category-wrapper
         each category in categories
-          if product.category == category.name
+          if product.category == category._id
             label.each-category
               input(type="radio" checked required name="category" value=category._id.toString())
               span= category.name

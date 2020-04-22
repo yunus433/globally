@@ -33,7 +33,8 @@ module.exports = (req, res, next) => {
     if (err) return res.redirect('/admin/products');
   
     const newProductData = {
-      category: category.name,
+      category: category._id,
+      categoryName: category.name,
       generalCategory: category.category,
       name: req.body.name,
       type: req.body.type,
