@@ -1,4 +1,6 @@
 window.onload = () => {
+  addEventListener(document);
+  
   const button = document.querySelector('#submit-button');
   const userId = document.getElementById('user-id').innerHTML;
 

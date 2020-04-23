@@ -19,6 +19,7 @@ const indexRouteController = require('./routes/indexRoute');
 const detailsRouteController = require('./routes/detailsRoute');
 const basketRouteController = require('./routes/basketRoute');
 const authRouteController = require('./routes/authRoute');
+const agreementRouteController = require('./routes/agreementRoute');
 const adminRouteController = require('./routes/adminRoute');
 const buyRouteController = require('./routes/buyRoute');
 const aboutusRouteController = require('./routes/aboutusRoute');
@@ -90,6 +91,7 @@ app.use('/admin', adminRouteController);
 app.use('/buy', buyRouteController);
 app.use('/aboutus', aboutusRouteController);
 app.use('/pay', payRouteController);
+app.use('/agreement', agreementRouteController);
 
 server.listen(PORT, () => {
   console.log(`Server is on port ${PORT}`);

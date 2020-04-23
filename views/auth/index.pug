@@ -34,6 +34,7 @@ block main
       i.fas.fa-key
       input.main-input(type="password" name="confirm_password" placeholder="Şifre Tekrarı")
     button.send-form-button.register-send-button Üye Ol
+    a.agreement-text(href="/agreement") Üyelik Sözleşmesini ve kişisel verilerin korunması hakkında bilgilendirmeyi okudum ve kabul ediyorum.
     if register_error
       .error-wrapper
         span= register_error
