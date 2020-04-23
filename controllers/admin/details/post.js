@@ -34,7 +34,7 @@ module.exports = (req, res) => {
           isDolar: (req.body.isDolar ? true : false),
           onSale: req.body.onSale ? true : false,
           saleAmount: req.body.onSale ? req.body.saleAmount : "",
-          salePrice: req.body.onSale ? (Math.round(parseInt(req.body.price) * (100 - parseInt(req.body.saleAmount))) / 100) : ""
+          salePrice: req.body.onSale ? ((Math.round(parseInt(req.body.price) * (100 - parseInt(req.body.saleAmount)) / 10 )) / 10).toString().replace('.', ',') : ""
         }}, {upsert: true}, (err, product) => {
           if (err) return res.redirect('/');
       

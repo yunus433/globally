@@ -50,6 +50,7 @@
   border: 2px solid rgb(236, 236, 236);
   padding: 15px;
   border-radius: 15px;
+  margin-bottom: 15px;
 }
 .product-image-wrapper {
   height: 40px;
