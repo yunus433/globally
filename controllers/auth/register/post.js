@@ -10,7 +10,7 @@ module.exports = (req, res) => {
           const newUserData = {
             email: req.body.email,
             password: req.body.password
-          }; 
+          };
       
           const newUser = new User(newUserData);
       
@@ -24,8 +24,21 @@ module.exports = (req, res) => {
               return res.redirect("/auth");
             }
       
-            req.session.user = user;
-            return res.redirect("/");
+            req.gateway.customer.create({
+              email: req.body.email,
+            }, (err, result) => {
+              console.log(err, result);
+              if (err) return res.redirect('/');
+
+              User.findByIdAndUpdate(user._id, {$set: {
+                braintreeCustomerID: result.customer.id
+              }}, {new: true}, (err, user) => {
+                if (err) return res.redirect('/');
+
+                req.session.user = user;
+                return res.redirect("/");
+              });
+            });
           });
         } else {
           req.session.register_error = "Şifreniz 5 haneden uzun olmalıdır.";

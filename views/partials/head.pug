@@ -17,6 +17,8 @@ html(lang="tr")
         link(rel="stylesheet", href=`/css/${page}.css`)
       if includes.external.indexOf('admin') > -1
         link(rel="stylesheet", href=`/css/admin/general.css`)
+      if includes.external.indexOf('braintree') > -1
+        script(src="https://js.braintreegateway.com/web/dropin/1.22.1/js/dropin.min.js")
       if includes.external.indexOf('admin') <= -1
         link(rel="stylesheet", href=`/css/general.css`)
       script(src='/js/general/addEventListener.js')

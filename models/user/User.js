@@ -22,6 +22,14 @@ const UserSchema = new Schema({
     type: Boolean,
     default: false
   },
+  braintreeCustomerID: {
+    type: String,
+    default: ""
+  },
+  currentPrice: {
+    type: Number,
+    default: 0
+  },
   name: {
     type: String,
     default: ""
