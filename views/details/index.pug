@@ -33,14 +33,22 @@ block main
         .remove-from-basket-button-main(id=product._id) Sepetten Çıkar
   span.products-title Benzer Ürünler:
   .products-wrapper
-    each product in products
-      a.each-product(id=product._id href=`/details?id=${product._id}`)
-        .each-product-image-wrapper
-          img.each-product-image(src=product.productPhotoArray[0])
-        span.each-product-name #{product.name}
-        span.each-product-description #{product.description}
-        span.each-product-price #{product.price} ₺/#{product.type}
-        if (!basket.includes(product._id.toString()))
-          .add-to-basket-button(id=product._id) Sepete Ekle
-        else
-          .remove-from-basket-button(id=product._id) Sepetten Çıkar
+    .products-inner-wrapper
+      each product in products
+        a.each-product(id=product._id href=`/details?id=${product._id}`)
+          .each-product-sale-line
+            if product.onSale
+              span.each-product-sale-text -#{product.saleAmount}%
+            else
+              span.each-product-sale-text-empty
+          .each-product-image-wrapper
+            img.product-image(src=product.productPhotoArray[0])
+          span.product-name #{product.name}
+          span.product-description #{product.description}
+          span.product-price #{product.price} #{product.isDolar ? "$" : "₺"}/#{product.type}
+            if product.isDolar
+              span.product-is-dolar (#{currency * product.price}₺)
+          if (!basket.includes(product._id.toString()))
+            .add-to-basket-button(id=product._id) Sepete Ekle
+          else
+            .remove-from-basket-button(id=product._id) Sepetten Çıkar

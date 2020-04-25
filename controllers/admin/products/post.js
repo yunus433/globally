@@ -55,7 +55,11 @@ module.exports = (req, res, next) => {
       }}, {}, err => {
         if (err) return res.redirect('/admin/products');
 
-        return res.redirect('/admin/products');
+        Product.collection.createIndex({ createdAt: 1 }, (err, result) => {
+          if (err) return res.redirect('/admin/products');
+        
+          return res.redirect('/admin/products');
+        });
       });
     });
   });

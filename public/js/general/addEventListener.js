@@ -48,29 +48,29 @@ addEventListener = (document) => {
 
   document.addEventListener("mouseout", (event) => {
     if (event.target.className == "each-product") {
-      event.target.childNodes[4].style.visibility = "hidden";
+      event.target.childNodes[5].style.visibility = "hidden";
     } else if (event.target.parentNode.className == "each-product") {
-      event.target.parentNode.childNodes[4].style.visibility = "hidden";
+      event.target.parentNode.childNodes[5].style.visibility = "hidden";
     } else if (event.target.parentNode.className == "each-product") {
-      event.target.parentNode.childNodes[4].style.visibility = "hidden";
+      event.target.parentNode.childNodes[5].style.visibility = "hidden";
     } else if (event.target.parentNode.parentNode.className == "each-product") {
-      event.target.parentNode.parentNode.childNodes[4].style.visibility = "hidden";
+      event.target.parentNode.parentNode.childNodes[5].style.visibility = "hidden";
     } else if (event.target.parentNode.parentNode.parentNode.className == "each-product") {
-      event.target.parentNode.parentNode.parentNode.childNodes[4].style.visibility = "hidden";
+      event.target.parentNode.parentNode.parentNode.childNodes[5].style.visibility = "hidden";
     }
   });
 
   document.addEventListener("mouseover", (event) => {
     if (event.target.className == "each-product") {
-      event.target.childNodes[4].style.visibility = "visible";
+      event.target.childNodes[5].style.visibility = "visible";
     } else if (event.target.parentNode.className == "each-product") {
-      event.target.parentNode.childNodes[4].style.visibility = "visible";
+      event.target.parentNode.childNodes[5].style.visibility = "visible";
     } else if (event.target.parentNode.className == "each-product") {
-      event.target.parentNode.childNodes[4].style.visibility = "visible";
+      event.target.parentNode.childNodes[5].style.visibility = "visible";
     } else if (event.target.parentNode.parentNode.className == "each-product") {
-      event.target.parentNode.parentNode.childNodes[4].style.visibility = "visible";
+      event.target.parentNode.parentNode.childNodes[5].style.visibility = "visible";
     } else if (event.target.parentNode.parentNode.parentNode.className == "each-product") {
-      event.target.parentNode.parentNode.parentNode.childNodes[4].style.visibility = "visible";
+      event.target.parentNode.parentNode.parentNode.childNodes[5].style.visibility = "visible";
     }
 
     if (event.target.className == "all-product-button" || event.target.parentNode.className == "all-product-button" || event.target.parentNode.parentNode.className == "all-product-button") {

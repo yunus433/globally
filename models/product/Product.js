@@ -68,60 +68,33 @@ const ProductSchema = new Schema({
 ProductSchema.statics.getLatest = function (params, callback) {
   const Product = this;
 
-  if (params.keywords) {
-    const keywordsArr = params.keywords.replace('.', '').replace('!', '').replace('?', '').replace('-', ' ').split(" ");
+  const keywords = params.keywords ? params.keywords.replace('.', '').replace('!', '').replace('?', '').replace('-', ' ').split(" ") : null;
 
-    if (params.category != "Tüm Ürünler") {
-      Product
-        .find({keywords: {$all: keywordsArr}, category: params.category})
-        .sort({"createdAt": -1})
-        .then(products => {
-          if (products) return callback(null, products);
+  if (keywords) {
+    Product
+      .find({
+        keywords: keywords,
+        generalCategory: (params.generalCategory ? params.generalCategory : {$nin: ['all_products']}),
+        category: (params.category ? params.category : {$nin: ['all_products']})
+      })
+      .sort({"createdAt": 1})
+      .then(products => {
+        if (products) return callback(null, products);
           
-          return callback(true);
-        })
-        .catch(err => {
-          callback(err);
-        });
-    } else {
-      Product
-        .find({keywords: {$all: keywordsArr}})
-        .sort({"createdAt": -1})
-        .then(products => {
-          if (products) return callback(null, products);
-          
-          return callback(true);
-        })
-        .catch(err => {
-          callback(err);
-        });
-    }
+        return callback(true);
+      });
   } else {
-    if (params.category != "Tüm Ürünler") {
-      Product
-        .find({category: params.category})
-        .sort({"createdAt": -1})
-        .then((products) => {
-          if (products) return callback(null, products);
+    Product
+      .find({
+        generalCategory: (params.generalCategory ? params.generalCategory : {$nin: ['all_products']}),
+        category: (params.category ? params.category : {$nin: ['all_products']})
+      })
+      .sort({"createdAt": 1})
+      .then(products => {
+        if (products) return callback(null, products);
           
-          return callback(true);
-        })
-        .catch(err => {
-          callback(err);
-        });
-    } else {
-      Product
-        .find()
-        .sort({"createdAtSecond": -1})
-        .then(products => {
-          if (products) return callback(null, products);
-          
-          return callback(true);
-        })
-        .catch(err => {
-          callback(err);
-        });
-    }
+        return callback(true);
+      });
   }
 };
 

@@ -347,6 +347,158 @@ body {
   flex: 7;
 }
 
+.products-inner-wrapper {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin-top: 2%;
+  margin-bottom: 10%;
+}
+.each-product {
+  height: 50vh;
+  padding: 15px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid white;
+  margin-bottom: 10%;
+}
+.each-product:hover {
+  border: 2px solid rgb(236, 236, 236);
+  box-shadow: 0px 0px 25px 10px rgb(236, 236, 236);
+  z-index: 2;
+}
+.each-product-sale-line {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 3;
+}
+.each-product-sale-text {
+  transform: translate(50%, -50%);
+  width: 70px;
+  height: 70px;
+  margin-bottom: -10px;
+  background-color: rgb(87, 154, 40);
+  color: white;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 125%;
+}
+.each-product-sale-text-empty {
+  transform: translate(50%, -50%);
+  width: 50px;
+  height: 50px;
+  margin-bottom: -10px;
+  background-color: transparent;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 125%;
+}
+.each-product-image-wrapper {
+  height: 20vh;
+  width: 15vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.product-image {
+  height: 100%;
+}
+.product-name {
+  font-size: 150%;
+  font-weight: 700;
+  color: rgb(64, 64, 64);
+  margin-top: 15px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+}
+.product-description {
+  font-size: 100%;
+  font-weight: 300;
+  color: rgb(64, 64, 64);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+.product-price-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.product-old-price {
+  font-size: 100%;
+  color: rgb(64, 64, 64);
+  font-weight: 300;
+  text-decoration: line-through;
+}
+.product-price {
+  color: rgb(243, 149, 63);
+  font-size: 200%;
+  font-weight: 700;
+}
+.product-is-dolar {
+  color: rgb(243, 149, 63);
+  font-size: 100%;
+  font-weight: 300;
+  margin-left: 10px;
+}
+.add-to-basket-button {
+  background-color: rgb(87, 154, 40);
+  font-size: 125%;
+  color: white;
+  font-weight: 600;
+  width: 100%;
+  margin-top: auto;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  visibility: hidden;
+}
+.add-to-basket-button:hover {
+  background-color: rgb(243, 149, 63);
+}
+.remove-from-basket-button {
+  background-color: rgb(255, 0, 0);
+  font-size: 125%;
+  color: white;
+  font-weight: 600;
+  width: 100%;
+  margin-top: auto;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  visibility: hidden;
+}
+.remove-from-basket-button:hover {
+  background-color: rgb(243, 149, 63);
+}
+
 @-webkit-keyframes open {
   from {
     transform: translateX(-100%);
@@ -433,5 +585,58 @@ body {
     max-width: 20%;
     display: flex;
     align-items: center;
+  }
+}
+
+
+@media only screen and (max-width: 1200px) and (min-width: 1000px) {
+  .products-inner-wrapper {
+    grid-template-columns: 33% 33% 33%;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 800px) {
+  .products-inner-wrapper {
+    grid-template-columns: 33% 33% 33%;
+  }
+  .each-product-image-wrapper {
+    width: 26vw;
+  }
+  .product-name {
+    font-size: 125%;
+  }
+  .product-description {
+    font-size: 90%;
+  }
+  .product-price {
+    font-size: 175%;
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 300px) {
+  .products-inner-wrapper {
+    grid-template-columns: 33% 33% 33%;
+  }
+  .products-inner-wrapper {
+    grid-template-columns: 100%;
+  }
+  .product-number-wrapper {
+    width: 90vw;
+  }
+  .each-product-image-wrapper {
+    width: 90vw;
+  }
+  .each-product {
+    padding-top: 5%;
+    margin-bottom: 5%;
+  }
+  .product-name {
+    font-size: 125%;
+  }
+  .product-description {
+    font-size: 90%;
+  }
+  .product-price {
+    font-size: 175%;
   }
 }

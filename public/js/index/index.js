@@ -53,4 +53,32 @@ window.onload = () => {
       }, 100);
     }
   });
+
+  document.addEventListener("mouseout", (event) => {
+    if (event.target.className == "each-category") {
+      event.target.childNodes[3].style.visibility = "hidden";
+    } else if (event.target.parentNode.className == "each-category") {
+      event.target.parentNode.childNodes[3].style.visibility = "hidden";
+    } else if (event.target.parentNode.className == "each-category") {
+      event.target.parentNode.childNodes[3].style.visibility = "hidden";
+    } else if (event.target.parentNode.parentNode.className == "each-category") {
+      event.target.parentNode.parentNode.childNodes[3].style.visibility = "hidden";
+    } else if (event.target.parentNode.parentNode.parentNode.className == "each-category") {
+      event.target.parentNode.parentNode.parentNode.childNodes[3].style.visibility = "hidden";
+    }
+  });
+
+  document.addEventListener("mouseover", (event) => {
+    if (event.target.className == "each-category") {
+      event.target.childNodes[3].style.visibility = "visible";
+    } else if (event.target.parentNode.className == "each-category") {
+      event.target.parentNode.childNodes[3].style.visibility = "visible";
+    } else if (event.target.parentNode.className == "each-category") {
+      event.target.parentNode.childNodes[3].style.visibility = "visible";
+    } else if (event.target.parentNode.parentNode.className == "each-category") {
+      event.target.parentNode.parentNode.childNodes[3].style.visibility = "visible";
+    } else if (event.target.parentNode.parentNode.parentNode.className == "each-category") {
+      event.target.parentNode.parentNode.parentNode.childNodes[3].style.visibility = "visible";
+    }
+  });
 }
