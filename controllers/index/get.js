@@ -39,6 +39,27 @@ module.exports = (req, res) => {
         });
       });
     });
+  } else if (!req.query.category && req.query.generalCategory && !req.query.keywords) {
+    Category.find({
+      category: req.query.generalCategory
+    }, (err, categories) => {
+      if (err) return console.log(err);
+
+      return res.render('index/index', {
+        page: 'index/index',
+        title: 'Ana Sayfa',
+        includes: {
+          external: ['js', 'css', 'fontawesome']
+        },
+        user: req.session.user || undefined,
+        categories,
+        category: req.query.category,
+        generalCategory: req.query.generalCategory ? req.query.generalCategory : 'Tüm Ürünler',
+        keywords: req.query.keywords,
+        basket: req.session.basket || [],
+        currency: 7
+      });
+    });
   } else {
     Product.getLatest({
       'category': req.query.category,

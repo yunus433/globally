@@ -73,7 +73,7 @@ addEventListener = (document) => {
       event.target.parentNode.parentNode.parentNode.childNodes[5].style.visibility = "visible";
     }
 
-    if (event.target.className == "all-product-button" || event.target.parentNode.className == "all-product-button" || event.target.parentNode.parentNode.className == "all-product-button") {
+    if (event.target.className == "all-product-button" || event.target.parentNode.className == "all-product-button" || event.target.parentNode.parentNode.className == "all-product-button" || event.target.parentNode.parentNode.parentNode.className == "all-product-button") {
       document.querySelector(".header-category-wrapper").style.display = "block";
     } else {
       document.querySelector(".header-category-wrapper").style.display = "none";
