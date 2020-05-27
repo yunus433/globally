@@ -29,6 +29,9 @@ window.onload = () => {
         clickedButton.className = "remove-from-basket-button";
         numberWrapper.classList.add('popUpCloseAnimationClass');
         numberWrapper.classList.remove('popUpOpenAnimationClass');
+        setTimeout(() => {
+          numberWrapper.style.display = "none";
+        }, 500);
         numberError.innerHTML = "";
         numberInput.value = 1;
       } else {
@@ -37,6 +40,9 @@ window.onload = () => {
     } else if (event.target.className == "product-number-close-button") {
       numberWrapper.classList.add('popUpCloseAnimationClass');
       numberWrapper.classList.remove('popUpOpenAnimationClass');
+      setTimeout(() => {
+        numberWrapper.style.display = "none";
+      }, 500);
       numberError.innerHTML = "";
       numberInput.value = 1;
     }
@@ -45,6 +51,7 @@ window.onload = () => {
       event.preventDefault();
       numberWrapper.classList.add('popUpOpenAnimationClass');
       numberWrapper.classList.remove('popUpCloseAnimationClass');
+      numberWrapper.style.display = "flex";
       clickedButton = event.target;
     }
 
@@ -65,6 +72,7 @@ window.onload = () => {
       event.preventDefault();
       numberWrapper.classList.add('popUpOpenAnimationClass');
       numberWrapper.classList.remove('popUpCloseAnimationClass');
+      numberWrapper.style.display = "flex";
       clickedButton = event.target;
     }
 

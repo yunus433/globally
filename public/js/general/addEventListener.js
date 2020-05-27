@@ -36,7 +36,6 @@ addEventListener = (document) => {
       !event.target.parentNode.classList.contains("responsive-menu-wrapper") &&
       !event.target.parentNode.parentNode.classList.contains("responsive-menu-wrapper") &&
       !event.target.parentNode.parentNode.parentNode.classList.contains("responsive-menu-wrapper") &&
-      !event.target.parentNode.parentNode.parentNode.parentNode.classList.contains("responsive-menu-wrapper") && 
       document.querySelector(".responsive-menu-wrapper").classList.contains("open-menu-animation-class")
     ) {
       document.querySelector(".responsive-menu-wrapper").classList.remove("open-menu-animation-class");

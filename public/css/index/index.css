@@ -15,7 +15,7 @@
   border-radius: 15px;
   padding: 2%;
   z-index: 10;
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 .popUpOpenAnimationClass {
