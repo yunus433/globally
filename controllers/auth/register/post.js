@@ -26,20 +26,21 @@ module.exports = (req, res) => {
               return res.redirect('/auth/register');
             }
       
-            req.gateway.customer.create({
-              email: req.body.email,
-            }, (err, result) => {
-              if (err) return res.redirect('/');
+            // req.gateway.customer.create({
+            //   email: req.body.email,
+            // }, (err, result) => {
+            //   if (err) return res.redirect('/');
 
-              User.findByIdAndUpdate(user._id, {$set: {
-                braintreeCustomerID: result.customer.id
-              }}, {new: true}, (err, user) => {
-                if (err) return res.redirect('/');
+            //   User.findByIdAndUpdate(user._id, {$set: {
+            //     braintreeCustomerID: result.customer.id
+            //   }}, {new: true}, (err, user) => {
+            //     if (err) return res.redirect('/');
 
-                req.session.user = getUserObject(user);
-                return res.redirect('/');
-              });
-            });
+            //     req.session.user = getUserObject(user);
+            //     return res.redirect('/');
+            //   });
+            // });
+            return res.redirect('/');
           });
         } else {
           req.session.error = 'Şifreniz 5 haneden uzun olmalıdır.';
