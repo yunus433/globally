@@ -1,0 +1,19 @@
+extends ./../partials/header
+block main
+  form.main-wrapper(action="/auth/login" method="POST")
+    span.main-title Üye Girişi
+    span.main-input-title E-Posta Adresi
+    .main-input-wrapper
+      i.fas.fa-envelope
+      input.main-input(type="text" name="email" placeholder="E-Posta Adresi" spellcheck="false" autocomplete="off")
+    span.main-input-title Şifre
+    .main-input-wrapper
+      i.fas.fa-key
+      input.main-input(type="password" name="password" placeholder="Şifre")
+    button.send-form-button Giriş Yap
+    .auth-link-wrapper
+      span Henüz üye değil misin?
+        a(href="/auth/register") Hemen Üye Ol
+    if error
+      .error-wrapper
+        span= error

@@ -3,8 +3,6 @@ block main
   form.main-form(action="/buy" method="POST")
     span.form-title Siparişi Tamamla:
     span.form-info Toplam ürün fiyatı: #{price}₺
-    input.display-none(type="text" name="price" value=price)
-    input.display-none(type="text" name="products" value=JSON.stringify(products))
     .form-line
       .main-input-wrapper
         i.fas.fa-phone
@@ -45,7 +43,5 @@ block main
       label.each-shipping-option
         input(type="radio" name="shipping" value="Global Yeşilyurt sevkiyat araçları ile (Karadeniz Bölgesi)" required)
         span Global Yeşilyurt sevkiyat araçları ile (sadece Karadeniz Bölgesi için)
-    span.form-info-title Ödeme Seçenekleri
-    span.price-info Siparişinizi tamamladıktan sonra ödeme seçenekleri hakkında şirketimiz tarafından aranacaksınız.
     .button-wrapper
       button.send-button Siparişi Bitir

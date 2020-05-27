@@ -24,7 +24,7 @@ block content
     .all-header
       i.fas.fa-bars.all-header-responsive-menu-open-button
       a.header-logo(href="/")
-        img(src="/res/images/main_logo.png")
+        img(src="/res/images/main_logo.png" alt="ceoyesilyurt logo")
       span.all-product-button Kategoriler
         i.fas.fa-chevron-down
         .header-category-wrapper
@@ -43,17 +43,22 @@ block content
         input.search-input-responsive(type="text" placeholder="Ürün Ara" autocomplete="off")
       .user-wrapper
         if (!user)
-          a.login-wrapper(href="/auth") 
+          .auth-wrapper
             i.fas.fa-user
-            .login-button
-              span Giriş Yap 
-              span veya Üye Ol
+            .auth-inner-wrapper
+              a.auth-button(href="/auth/login")
+                span Giriş Yap
+              a.auth-button(href="/auth/register")
+                span veya Üye Ol
+          a.auth-wrapper-responsive(href="/auth/login")
+            i.fas.fa-user
         else
-          .login-wrapper(href="/auth") 
+          .auth-wrapper
             i.fas.fa-user
-            .login-button
-              span= user.email
-              span olarak giriş yapıldı
+            .auth-inner-wrapper
+              .auth-button-user
+                span= user.email
+                span olarak giriş yapıldı
         a.basket-wrapper(href="/basket") 
           .basket-button
             span Alışveriş

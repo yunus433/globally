@@ -1,0 +1,25 @@
+extends ./../partials/header
+block main
+  form.main-wrapper(action="/auth/register" method="POST")
+    span.main-title Üye Ol
+    span.main-input-title E-Posta Adresi
+    .main-input-wrapper
+      i.fas.fa-envelope
+      input.main-input(type="text" name="email" placeholder="E-Posta Adresi" spellcheck="false" autocomplete="off")
+    span.main-input-title Şifre
+    .main-input-wrapper
+      i.fas.fa-key
+      input.main-input(type="password" name="password" placeholder="Şifre")
+    span.main-input-title Şifre Tekrarı
+    .main-input-wrapper
+      i.fas.fa-key
+      input.main-input(type="password" name="confirm_password" placeholder="Şifre Tekrarı")
+    a.agreement-text(href="/agreement/user") - Üyelik Sözleşmesini kabul ediyorum.
+    a.agreement-text(href="/agreement/privacy") - Kişisel verilerin korunması hakkındaki bilgilendirmeyi okudum ve onaylıyorum.
+    button.send-form-button Üye Ol
+    .auth-link-wrapper
+      span Zaten üye misin?
+        a(href="/auth/login") Giriş Yap
+    if error
+      .error-wrapper
+        span= error

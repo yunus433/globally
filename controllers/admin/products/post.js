@@ -17,6 +17,10 @@ uploadToCloudinary = (cloudinary, nameArray) => {
   });
 };
 
+const engName = word => {
+  return word.toLocaleLowerCase().split('ş').join('s').split('ı').join('i').split('ö').join('o').split('ç').join('c').split('ü').join('u').split('ğ').join('g');
+}
+
 module.exports = (req, res, next) => {
   const productPhotoArray = [];
 
@@ -41,7 +45,7 @@ module.exports = (req, res, next) => {
       description: req.body.description,
       price: req.body.price,
       productPhotoArray,
-      keywords: req.body.keywords.toLocaleLowerCase().split(" ").concat(req.body.name.toLocaleLowerCase().split(" ")),
+      keywords: (engName(req.body.description).split(' ').join('+').split('\n').join('+').split('\t').join('+') + "+" + engName(req.body.name).split(' ').join('+').split('\n').join('+').split('\t').join('+')).split("+"),
       isDolar: req.body.isDolar ? true : false
     };
 

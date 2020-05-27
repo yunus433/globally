@@ -11,11 +11,16 @@ block main
         a.finish-button(href="/buy") Siparişi Tamamla
       .products-wrapper
         each product in products
-          .each-product(id=product._id)
-            .each-product-image-wrapper
-              img.each-product-image(src=product.productPhotoArray[0])
-            span.product-name #{product.number} adet #{product.name}
-            span.product-price #{parseFloat(product.price) * parseFloat(product.number)} ₺/#{product.type}
+          .basket-each-product(id=product._id)
+            .basket-each-product-image-wrapper
+              img.basket-each-product-image(src=product.productPhotoArray[0])
+            span.basket-product-name #{product.number} adet #{product.name}
+            .basket-product-price-wrapper
+              if product.onSale
+                span.basket-product-old-price #{parseFloat(product.price) * parseFloat(product.number)} ₺
+                span.basket-product-price #{parseFloat(product.salePrice) * parseFloat(product.number)} #{product.isDolar ? "$" : "₺"}/#{product.type}
+              else
+                span.basket-product-price #{parseFloat(product.price) * parseFloat(product.number)} #{product.isDolar ? "$" : "₺"}/#{product.type}
             i.fas.fa-trash.remove-button
     else
       .main-header

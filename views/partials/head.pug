@@ -2,6 +2,7 @@ doctype html
 html(lang="tr")
   head
     meta(name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no")
+    meta(name="description", content="Ceo Yeşilyurt Global: Ceo Yeşilyurt'un web sitesi üzerinden dükkanımızdaki geniş ürün kataloğunu internet üzerinde de görebilir, Ceo Yeşilyurt Güvencesiyle online alışveriş yapabilirsiniz.")
     title GLOBAL | #{title}
     if includes && includes.external
       if includes.external.indexOf('fontawesome') > -1
@@ -17,8 +18,6 @@ html(lang="tr")
         link(rel="stylesheet", href=`/css/${page}.css`)
       if includes.external.indexOf('admin') > -1
         link(rel="stylesheet", href=`/css/admin/general.css`)
-      if includes.external.indexOf('braintree') > -1
-        script(src="https://js.braintreegateway.com/web/dropin/1.22.1/js/dropin.min.js")
       if includes.external.indexOf('admin') <= -1
         link(rel="stylesheet", href=`/css/general.css`)
       script(src='/js/general/addEventListener.js')

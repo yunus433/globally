@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const expressSession = require('express-session');
 const cloudinary = require('cloudinary');
-const braintree = require('braintree');
+// const iyz = require('iyzipay');
 
 const app = express();
 const server = http.createServer(app);
@@ -31,10 +31,9 @@ const {
   SESSION_SECRET,
   CLOUDINARY_CLOUD_NAME,
   CLOUDINARY_API_KEY,
-  CLOUDINARY_API_SECRET,
-  BRAINTREE_MERCHANT_ID,
-  BRAINTREE_PUBLIC_KEY,
-  BRAINTREE_PRIVATE_KEY
+  CLOUDINARY_API_SECRET
+  // IYZICO_API_KEY,
+  // IYZICO_API_SECRET
 } = process.env;
 
 app.set("views", path.join(__dirname, "views"));
@@ -54,12 +53,11 @@ cloudinary.config({
   api_secret: CLOUDINARY_API_SECRET
 });
 
-const gateway = braintree.connect({
-  environment: braintree.Environment.Sandbox,
-  merchantId: BRAINTREE_MERCHANT_ID,
-  publicKey: BRAINTREE_PUBLIC_KEY,
-  privateKey: BRAINTREE_PRIVATE_KEY
-});
+// const iyzipay = new iyz({
+//   apiKey: IYZICO_API_KEY,
+//   secretKey: IYZICO_API_SECRET,
+//   uri: 'https://sandbox-api.iyzipay.com'
+// });
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -79,7 +77,7 @@ app.use(session);
 
 app.use((req, res, next) => {
   req.cloudinary = cloudinary;
-  req.gateway = gateway;
+  // req.iyzipay = iyzipay;
   next();
 });
 

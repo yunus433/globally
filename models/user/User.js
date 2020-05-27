@@ -61,6 +61,14 @@ const UserSchema = new Schema({
   address: {
     type: String,
     default: ""
+  },
+  currentPrice: {
+    type: Number,
+    default: 0
+  },
+  currentProducts: {
+    type: Array,
+    default: []
   }
 });
 

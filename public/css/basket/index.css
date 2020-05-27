@@ -16,6 +16,7 @@
 .main-title-wrapper {
   display: flex;
   flex-direction: column;
+  margin-right: auto;
 }
 .main-title {
   font-size: 200%;
@@ -54,7 +55,7 @@
   flex-direction: column;
   margin-top: 2%;
 }
-.each-product {
+.basket-each-product {
   height: 10vh;
   padding: 2%;
   background: white;
@@ -67,7 +68,7 @@
   align-items: center;
   border-radius: 5px;
 }
-.each-product-image-wrapper {
+.basket-each-product-image-wrapper {
   height: 8vh;
   width: 5vw;
   display: flex;
@@ -79,10 +80,10 @@
   overflow: hidden;
   margin-right: 15px;
 }
-.each-product-image {
+.basket-each-product-image {
   height: 100%;
 }
-.product-name {
+.basket-product-name {
   font-size: 100%;
   font-weight: 600;
   color: rgb(64, 64, 64);
@@ -91,11 +92,22 @@
   word-wrap: break-word;
   text-overflow: ellipsis;
 }
-.product-price {
-  color: rgb(243, 149, 63);
-  font-size: 200%;
-  font-weight: 700;
+.basket-product-price-wrapper {
+  display: flex;
+  align-items: center;
   margin-left: auto;
+}
+.basket-product-old-price {
+  font-size: 125%;
+  color: rgb(64, 64, 64);
+  font-weight: 300;
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+.basket-product-price {
+  color: rgb(243, 149, 63);
+  font-size: 150%;
+  font-weight: 700;
 }
 .remove-button {
   margin-left: 15px;

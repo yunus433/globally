@@ -1,6 +1,8 @@
-const validator = require("validator");
+const validator = require('validator');
 
-const User = require("../../../models/user/User");
+const User = require('../../../models/user/User');
+
+const getUserObject = require('../../../utils/getUserObject');
 
 module.exports = (req, res) => {
   if (req.body && req.body.email && req.body.password && req.body.confirm_password) {
@@ -16,18 +18,17 @@ module.exports = (req, res) => {
       
           newUser.save((err, user) => {
             if (err && err.code == 11000) {
-              req.session.register_error = "Bu e-posta adresi ile bir hesap zaten açılmış, lütfen başka bir e-posta adresi deneyin.";
-              return res.redirect("/auth");
+              req.session.error = 'Bu e-posta adresi ile bir hesap zaten açılmış, lütfen başka bir e-posta adresi deneyin.';
+              return res.redirect('/auth/register');
             }
             if (err) {
-              req.session.register_error = "Bir hata oluştu, lütfen tekrar deneyin.";
-              return res.redirect("/auth");
+              req.session.error = 'Bir hata oluştu, lütfen tekrar deneyin.';
+              return res.redirect('/auth/register');
             }
       
             req.gateway.customer.create({
               email: req.body.email,
             }, (err, result) => {
-              console.log(err, result);
               if (err) return res.redirect('/');
 
               User.findByIdAndUpdate(user._id, {$set: {
@@ -35,25 +36,25 @@ module.exports = (req, res) => {
               }}, {new: true}, (err, user) => {
                 if (err) return res.redirect('/');
 
-                req.session.user = user;
-                return res.redirect("/");
+                req.session.user = getUserObject(user);
+                return res.redirect('/');
               });
             });
           });
         } else {
-          req.session.register_error = "Şifreniz 5 haneden uzun olmalıdır.";
-          return res.redirect("/auth");
+          req.session.error = 'Şifreniz 5 haneden uzun olmalıdır.';
+          return res.redirect('/auth/register');
         }
       } else {
-        req.session.register_error = "Bu e-posta geçerli değil.";
-        return res.redirect("/auth");
+        req.session.error = 'Bu e-posta geçerli değil.';
+        return res.redirect('/auth/register');
       }
     } else {
-      req.session.register_error = "Lütfen şifrenizi doğru bir şekilde tekrarlayın."
-      return res.redirect("/auth");
+      req.session.error = 'Lütfen şifrenizi doğru bir şekilde tekrarlayın.'
+      return res.redirect('/auth/register');
     }
   } else {
-    req.session.register_error = "Lütfen bir e-posta ve şifre seçin ve şifrenizi tekrarlayın.";
-    return res.redirect('/auth');
+    req.session.error = 'Lütfen bir e-posta ve şifre seçin ve şifrenizi tekrarlayın.';
+    return res.redirect('/auth/register');
   }
 }

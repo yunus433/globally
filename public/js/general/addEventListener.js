@@ -31,6 +31,16 @@ addEventListener = (document) => {
     } else if (event.target.classList.contains("all-header-responsive-menu-close-button")) {
       document.querySelector(".responsive-menu-wrapper").classList.remove("open-menu-animation-class");
       document.querySelector(".responsive-menu-wrapper").classList.add("close-menu-animation-class");
+    } else if (
+      !event.target.classList.contains("responsive-menu-wrapper") &&
+      !event.target.parentNode.classList.contains("responsive-menu-wrapper") &&
+      !event.target.parentNode.parentNode.classList.contains("responsive-menu-wrapper") &&
+      !event.target.parentNode.parentNode.parentNode.classList.contains("responsive-menu-wrapper") &&
+      !event.target.parentNode.parentNode.parentNode.parentNode.classList.contains("responsive-menu-wrapper") && 
+      document.querySelector(".responsive-menu-wrapper").classList.contains("open-menu-animation-class")
+    ) {
+      document.querySelector(".responsive-menu-wrapper").classList.remove("open-menu-animation-class");
+      document.querySelector(".responsive-menu-wrapper").classList.add("close-menu-animation-class");
     }
 
     if (event.target.className == "responsive-all-product-button" || event.target.parentNode.className == "responsive-all-product-button") {

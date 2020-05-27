@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+const engName = word => {
+  return word.toLocaleLowerCase().split('ş').join('s').split('ı').join('i').split('ö').join('o').split('ç').join('c').split('ü').join('u').split('ğ').join('g');
+}
+
 const ProductSchema = new Schema({
   name: {
     required: true,
@@ -68,12 +72,12 @@ const ProductSchema = new Schema({
 ProductSchema.statics.getLatest = function (params, callback) {
   const Product = this;
 
-  const keywords = params.keywords ? params.keywords.replace('.', '').replace('!', '').replace('?', '').replace('-', ' ').split(" ") : null;
+  const keywordsArr = params.keywords ? (engName(params.keywords).split(' ').join('+').split('\n').join('+').split('\t').join('+')).split("+") : null;
 
-  if (keywords) {
+  if (keywordsArr) {
     Product
       .find({
-        keywords: keywords,
+        keywords: {$all: keywordsArr},
         generalCategory: (params.generalCategory ? params.generalCategory : {$nin: ['all_products']}),
         category: (params.category ? params.category : {$nin: ['all_products']})
       })

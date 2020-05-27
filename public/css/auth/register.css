@@ -1,0 +1,125 @@
+.all-content {
+  display: flex;
+  justify-content: center;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.main-wrapper {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5%;
+  min-height: fit-content;
+}
+
+.main-title {
+  color: rgb(64, 64, 64);
+  font-size: 200%;
+  font-weight: 700;
+  margin-bottom: 3%;
+}
+.main-input-title {
+  color: rgb(64, 64, 64);
+  font-size: 100%;
+  font-weight: 700;
+  margin-bottom: 1%;
+}
+.main-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 2px solid rgb(236, 236, 236);
+  background-color: white;
+  width: 100%;
+  padding: 15px 0;
+  padding-left: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+.main-input {
+  outline: none;
+  border: none;
+  font-size: 100%;
+  color: rgb(112, 112, 112);
+  width: 100%;
+  padding-left: 5px;
+}
+.main-input-wrapper i {
+  color: rgb(112, 112, 112);
+  font-size: 90%;
+}
+.send-form-button {
+  width: 100%;
+  padding: 15px 0px;
+  margin-top: 25px;
+  background-color: rgb(87, 154, 40);
+  outline-color: rgb(243, 149, 63);
+  color: white;
+  font-size: 125%;
+  font-weight: 600;
+  cursor: pointer;
+  border-width: 0px;
+  border-radius: 5px;
+}
+
+.error-wrapper {
+  margin-top: 25px;
+  color: rgb(243, 149, 63);
+  font-size: 100%;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.agreement-text {
+  color: rgb(64, 64, 64);
+  font-size: 100%;
+  font-weight: 300;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.auth-link-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.auth-link-wrapper span {
+  font-size: 125%;
+  color: rgb(64, 64, 64);
+  font-weight: 500;
+}
+.auth-link-wrapper a {
+  font-size: 100%;
+  color: rgb(243, 149, 63);
+  font-weight: 500;
+  margin-left: 5px;
+  text-decoration: none;
+}
+.auth-link-wrapper a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 700px) {
+  .main-wrapper {
+    width: 60vw;
+  }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 500px) {
+  .main-wrapper {
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 300px) {
+  .main-wrapper {
+    width: 90vw;
+  }
+  .auth-link-wrapper span {
+    font-size: 115%;
+  }
+}

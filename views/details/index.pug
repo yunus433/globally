@@ -11,8 +11,8 @@ block main
       .product-number-send-button Sepete Ekle
   .main-product-wrapper
     .product-left-side
-      .product-image-wrapper
-        img.product-image(src=product.productPhotoArray[0])
+      .main-product-image-wrapper
+        img.main-product-image(src=product.productPhotoArray[0])
       .product-images-menu
         img.product-menu-image.selected-menu-image(src=product.productPhotoArray[0])
         if product.productPhotoArray[1]
@@ -24,9 +24,23 @@ block main
         if product.productPhotoArray[4]
           img.product-menu-image(src=product.productPhotoArray[4])
     .product-right-side
-      span.product-title= product.name
-      span.product-description= product.description
-      span.product-price #{product.price} ₺/#{product.type}
+      .main-product-sale-line
+        if product.onSale
+          span.main-product-sale-text -#{product.saleAmount}%
+        else
+          span.main-product-sale-text-empty
+      span.main-product-title= product.name
+      span.main-product-description= product.description
+      .main-product-price-wrapper
+        if product.onSale
+          span.main-product-old-price #{product.price} ₺
+          span.main-product-price #{product.salePrice} #{product.isDolar ? "$" : "₺"}/#{product.type}
+          if product.isDolar
+            span.product-is-dolar (#{currency * product.salePrice}₺)
+        else
+          span.main-product-price #{product.price} #{product.isDolar ? "$" : "₺"}/#{product.type}
+          if product.isDolar
+            span.product-is-dolar (#{currency * product.price}₺)
       if (!basket.includes(product._id.toString()))
         .add-to-basket-button-main(id=product._id) Sepete Ekle
       else
@@ -45,9 +59,16 @@ block main
             img.product-image(src=product.productPhotoArray[0])
           span.product-name #{product.name}
           span.product-description #{product.description}
-          span.product-price #{product.price} #{product.isDolar ? "$" : "₺"}/#{product.type}
-            if product.isDolar
-              span.product-is-dolar (#{currency * product.price}₺)
+          .product-price-wrapper
+            if product.onSale
+              span.product-old-price #{product.price} ₺
+              span.product-price #{product.salePrice} #{product.isDolar ? "$" : "₺"}/#{product.type}
+              if product.isDolar
+                span.product-is-dolar (#{currency * product.salePrice}₺)
+            else
+              span.product-price #{product.price} #{product.isDolar ? "$" : "₺"}/#{product.type}
+              if product.isDolar
+                span.product-is-dolar (#{currency * product.price}₺)
           if (!basket.includes(product._id.toString()))
             .add-to-basket-button(id=product._id) Sepete Ekle
           else

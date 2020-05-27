@@ -1,22 +1,22 @@
 const mongoose = require('mongoose');
 
-const Order = require('../../models/order/Order');
-const User = require('../../models/user/User');
-
 module.exports = (req, res) => {
-  User.findByIdAndUpdate(mongoose.Types.ObjectId(req.session.user._id), {$set: {
-    name: req.body.name,
-    surName: req.body.surName,
-    securityNumber: req.body.tc,
-    phone: req.body.phone,
-    company: req.body.company,
-    city: req.body.city1,
-    town: req.body.city2,
-    address: req.body.address
-  }}, {new: true}, (err, user) => {
-    if (err) return res.redirect('/');
+  if (!req.body || !req.body.nonce)
+    return res.redirect('/');
 
-    req.session.basket = [];
+  User.findById(mongoose.Types.ObjectId(req.session.user._id), (err, user) => {
+    if (err || !user) return res.redirect('/');
+
+    req.gateway.transaction.sale({
+      amount: user.currentPrice.toString(),
+      currency: "TRY",
+      paymentMethodNonce: req.body.nonce,
+      options: {
+        submitForSettlement: true
+      }
+    }, (err, result) => {
+      if (err) return res.redirect('/');
+    });
 
     const newOrderData = {
       productList: user.currentProducts,
@@ -37,7 +37,7 @@ module.exports = (req, res) => {
     newOrder.save((err, order) => {
       if (err) return res.redirect('/');
       
-      return res.redirect('/basket');
+      
     });
   });
 }

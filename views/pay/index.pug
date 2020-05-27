@@ -1,8 +1,7 @@
 extends ./../partials/header
 block main
-  span#user-id.display-none= clientToken
-  .all-content-inner-wrapper
-    .container-wrapper
-      span.container-header Ödemeyi Tamamla
-      #dropin-container
-      button#submit-button Devam
+  span#formContent.display-none= formContent
+  #iyzipay-checkout-form.responsive
+  script.
+    const stringJS = document.getElementById('formContent').innerHTML;
+    eval(stringJS);

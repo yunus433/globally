@@ -89,7 +89,7 @@
 
 .main-product-wrapper {
   width: 75%;
-  margin-top: 25px;
+  margin-top: 50px;
   margin-left: 2%;
   margin-bottom: 25px;
   display: flex;
@@ -102,13 +102,13 @@
   align-items: center;
   justify-content: center;
 }
-.product-image-wrapper {
+.main-product-image-wrapper {
   max-width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.product-image {
+.main-product-image {
   max-width: 100%;
   max-height: 100%;
   border-radius: 15px;
@@ -138,26 +138,18 @@
   display: flex;
   flex-direction: column;
   padding-left: 25px;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+  overflow: visible;
 }
-.product-title {
+.main-product-title {
   margin-bottom: 5px;
   color: rgb(64, 64, 64);
   font-size: 175%;
   font-weight: 700;
 }
-.product-description {
+.main-product-description {
   font-size: 125%;
   color: rgb(64, 64, 64);
   font-weight: 300;
-}
-.product-price {
-  color: rgb(243, 149, 63);
-  font-size: 200%;
-  font-weight: 700;
-  margin-top: 25px;
-  margin-left: auto;
 }
 .add-to-basket-button-main {
   background-color: rgb(87, 154, 40);
@@ -165,7 +157,6 @@
   color: white;
   font-weight: 600;
   width: 50%;
-  margin-top: auto;
   margin-left: auto;
   display: flex;
   justify-content: center;
@@ -182,7 +173,6 @@
   color: white;
   font-weight: 600;
   width: 100%;
-  margin-top: auto;
   margin-left: 50%;
   transform: translateX(-50%);
   margin-top: 10px;
@@ -196,6 +186,46 @@
   background-color: rgb(243, 149, 63);
 }
 
+.main-product-price-wrapper {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.main-product-old-price {
+  color: rgb(64, 64, 64);
+  margin-left: auto;
+  text-decoration: line-through;
+  font-size: 150%;
+  margin-top: auto;
+}
+.main-product-price {
+  color: rgb(243, 149, 63);
+  font-size: 200%;
+  margin-top: 5px;
+  font-weight: 700;
+  margin-left: auto;
+}
+
+.main-product-sale-line {
+  display: flex;
+  justify-content: flex-end;
+}
+.main-product-sale-text {
+  transform: translate(50%, -50%);
+  width: 70px;
+  height: 70px;
+  margin-bottom: -70px;
+  background-color: rgb(87, 154, 40);
+  color: white;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 125%;
+  z-index: 2;
+}
 
 .products-title {
   margin-top: 25px;
