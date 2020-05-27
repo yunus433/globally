@@ -40,6 +40,7 @@ module.exports = (req, res) => {
             //     return res.redirect('/');
             //   });
             // });
+            req.session.user = getUserObject(user);
             return res.redirect('/');
           });
         } else {
