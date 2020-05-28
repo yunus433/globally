@@ -1,7 +1,9 @@
 extends ./../partials/header
 block main
   form.main-wrapper(action="/auth/login" method="POST")
-    span.main-title Üye Girişi
+    .main-title-wrapper
+      span.main-title Üye Girişi
+      a.password-reset(href="/auth/reset") Şifremi Unuttum
     span.main-input-title E-Posta Adresi
     .main-input-wrapper
       i.fas.fa-envelope

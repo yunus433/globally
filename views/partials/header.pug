@@ -53,12 +53,14 @@ block content
           a.auth-wrapper-responsive(href="/auth/login")
             i.fas.fa-user
         else
-          .auth-wrapper
-            i.fas.fa-user
+          a.auth-wrapper(href="/auth/logout")
+            i.fas.fa-sign-out-alt
             .auth-inner-wrapper
               .auth-button-user
                 span= user.email
-                span olarak giriş yapıldı
+                span  olarak giriş yapıldı
+          a.auth-wrapper-responsive(href="/auth/logout")
+            i.fas.fa-sign-out-alt
         a.basket-wrapper(href="/basket") 
           .basket-button
             span Alışveriş

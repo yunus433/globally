@@ -18,7 +18,7 @@ module.exports = (req, res) => {
       
       fs.unlink("./public/res/uploads/" + req.file.filename, err => {
         if (err) return res.redirect("/admin");
-  
+
         const newCategoryData = {
           category: req.body.category,
           name: req.body.name,
@@ -33,5 +33,5 @@ module.exports = (req, res) => {
           return res.redirect("/admin/categories");
         });
       });
-    })
+    });
 }

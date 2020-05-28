@@ -27,8 +27,8 @@ window.onload = () => {
         }));
         clickedButton.innerHTML = "Sepetten Çıkar";
         clickedButton.className = "remove-from-basket-button";
-        numberWrapper.classList.add('popUpCloseAnimationClass');
         numberWrapper.classList.remove('popUpOpenAnimationClass');
+        numberWrapper.classList.add('popUpCloseAnimationClass');
         setTimeout(() => {
           numberWrapper.style.display = "none";
         }, 500);
@@ -38,8 +38,8 @@ window.onload = () => {
         numberError.innerHTML = "Lütfen sıfırdan büyük bir değer giriniz"
       }
     } else if (event.target.className == "product-number-close-button") {
-      numberWrapper.classList.add('popUpCloseAnimationClass');
       numberWrapper.classList.remove('popUpOpenAnimationClass');
+      numberWrapper.classList.add('popUpCloseAnimationClass');
       setTimeout(() => {
         numberWrapper.style.display = "none";
       }, 500);
@@ -49,9 +49,9 @@ window.onload = () => {
 
     if (event.target.className == "add-to-basket-button" && event.target.id.length > 0) {
       event.preventDefault();
+      numberWrapper.style.display = "flex";
       numberWrapper.classList.add('popUpOpenAnimationClass');
       numberWrapper.classList.remove('popUpCloseAnimationClass');
-      numberWrapper.style.display = "flex";
       clickedButton = event.target;
     }
 
@@ -70,9 +70,9 @@ window.onload = () => {
 
     if (event.target.className == "add-to-basket-button-main" && event.target.id.length > 0) {
       event.preventDefault();
+      numberWrapper.style.display = "flex";
       numberWrapper.classList.add('popUpOpenAnimationClass');
       numberWrapper.classList.remove('popUpCloseAnimationClass');
-      numberWrapper.style.display = "flex";
       clickedButton = event.target;
     }
 

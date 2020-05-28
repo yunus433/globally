@@ -320,16 +320,19 @@ body {
 .auth-wrapper {
   display: flex;
   align-items: center;
+  text-decoration: none;
   padding-right: 20px;
   border-right: 1px solid rgb(64, 64, 64);
 }
 .auth-wrapper i {
   font-size: 150%;
   margin-right: 5px;
+  color: rgb(64, 64, 64);
 }
 .auth-wrapper-responsive {
   display: none;
   align-items: center;
+  text-decoration: none;
   padding-right: 10px;
   border-right: 1px solid rgb(64, 64, 64);
 }

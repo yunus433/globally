@@ -18,7 +18,15 @@ const UserSchema = new Schema({
     required: true,
     minlength: 6
   },
-  isCompelete: {
+  password_reset: {
+    type: String,
+    default: null
+  },
+  password_reset_exp_date: {
+    type: String,
+    default: null
+  },
+  isComplete: {
     type: Boolean,
     default: false
   },

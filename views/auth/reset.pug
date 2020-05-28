@@ -1,0 +1,31 @@
+extends ./../partials/header
+block main
+  if authentication
+    form.main-wrapper(action="/auth/reset?id=" + id + "&code=" + code  method="POST")
+      span.main-title Yeni Şifrenizi Girin
+      span.main-input-title Şifre
+      .main-input-wrapper
+        i.fas.fa-key
+        input.main-input#password-input(type="password" name="password" placeholder="Yeni Şifre" spellcheck="false" autocomplete="off" required)
+      span.main-input-title Şifre Tekrarı
+      .main-input-wrapper
+        i.fas.fa-key
+        input.main-input#confirm-password-input(type="password" placeholder="Şifre Tekrarı" spellcheck="false" autocomplete="off" required)
+      button.send-form-button Şifreyi Sıfırla
+      if error
+        .error-wrapper
+          span= error
+  else
+    form.main-wrapper(action="/auth/reset" method="POST")
+      span.main-title Şifre Sıfırlama
+      span.main-input-title E-Posta Adresi
+      .main-input-wrapper
+        i.fas.fa-envelope
+        input.main-input(type="text" name="email" placeholder="E-Posta Adresi" spellcheck="false" autocomplete="off" required)
+      button.send-form-button E-Posta'yı Gönder
+      if error
+        .error-wrapper
+          span= error
+      if success
+        .success-wrapper
+          span= success
