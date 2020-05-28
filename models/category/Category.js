@@ -5,8 +5,7 @@ const Schema = mongoose.Schema;
 const CategorySchema = new Schema({
   index: {
     type: Number,
-    unique: true,
-    required: true
+    default: 1
   },
   name: {
     type: String,

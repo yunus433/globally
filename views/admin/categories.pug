@@ -1,5 +1,6 @@
 extends ./../partials/admin_header
 block main
+  input.display-none#categories-input(type="text" value=categories)
   .header-wrapper
     .header-title-wrapper
       span.header-title Kategoriler Sayfası
@@ -8,13 +9,16 @@ block main
   .content-wrapper
     .categories-wrapper
       each category in categories
-        a.each-category-wrapper(href=`/admin/categories/details?id=${category._id}`)
+        .each-category-wrapper(id=category._id)
           .category-left-side
             .category-image-wrapper
               img.main-category-image(src=category.profilePhoto)
-          .category-right-side
+          a.category-right-side(href=`/admin/categories/details?id=${category._id}`)
             span.main-category-title= category.name
             span.main-category-description Ürün Sayısı: #{category.products.length}
+          .change-side-wrapper
+            i.fas.fa-arrow-up.up-button
+      span.send-new-order-button Yeni Sırayı Kaydet
   .new-category-form-wrapper
     form.new-category-form(action="/admin/categories" method="POST" enctype="multipart/form-data")
       span.form-title Yeni Kategori Ekle (Lütfen tüm alanları doldurun)

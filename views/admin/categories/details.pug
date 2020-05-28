@@ -1,0 +1,39 @@
+extends ./../../partials/admin_header
+block main
+  .header-wrapper
+    .header-title-wrapper
+      span.header-title= category.name
+      span.header-info Bu sayfadan #{category.name} kategorisini düzenleyebilirsiniz.
+  .new-category-form-wrapper
+    form.new-category-form(action="/admin/categories/details?id=" + category._id method="POST")
+      span.form-title Kategoriyi düzenle
+      span.input-title Genel Kategori (Bu kategoriye eklediğiniz tüm ürünler bu genel kategori altında listelenecektir)
+      .category-wrapper
+        if category.category == "Profil"
+          label.each-category
+            input(type="radio" required name="category" value="Profil" checked)
+            span Profil
+        else
+          label.each-category
+            input(type="radio" required name="category" value="Profil")
+            span Profil
+        if category.category == "Dolaplar"
+          label.each-category
+            input(type="radio" required name="category" value="Dolaplar" checked)
+            span Dolaplar
+        else
+          label.each-category
+            input(type="radio" required name="category" value="Dolaplar")
+            span Dolaplar
+        if category.category == "Profile Aksesuarları"
+          label.each-category
+            input(type="radio" required name="category" value="Profile Aksesuarları" checked)
+            span Profile Aksesuarları
+        else
+          label.each-category
+            input(type="radio" required name="category" value="Dolaplar")
+            span Profile Aksesuarları
+      span.input-title Kategori ismi
+      input.form-input(type="text" name="name" placeholder="Kategori İsmi" value=category.name required autocomplete="off")
+      .form-send-wrapper
+        button.send-form-button Düzenle
