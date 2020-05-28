@@ -9,7 +9,8 @@
   background-color: white;
   border: 2px solid rgb(236, 236, 236);
   margin-left: 50vw;
-  margin-top: 125vh;
+  /* margin-top: 125vh; */
+  margin-top: 25vh;
   transform: translate(-50%, -75%);
   border-radius: 15px;
   padding: 2%;

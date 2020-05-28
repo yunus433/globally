@@ -7,7 +7,7 @@ const Product = require('../../../models/product/Product');
 module.exports = (req, res) => {
   Order
     .find({})
-    .sort({'createdAt': 1})
+    .sort({'index': 1})
     .then(orders => {
 
       return res.render('admin/index', {
