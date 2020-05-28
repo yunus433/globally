@@ -5,7 +5,7 @@ const Category = require('../../../models/category/Category');
 
 module.exports = (req, res) => {
   if (!req.query.category)
-    req.query.category = "Tüm Ürünler";
+    req.query.category = null;
 
   if (!req.query.keywords)
     req.query.keywords = null;

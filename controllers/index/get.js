@@ -23,25 +23,25 @@ module.exports = (req, res) => {
         .find({})
         .sort({ index: 1 })
         .then(categories => {
-        return res.render('index/index', {
-          page: 'index/index',
-          title: 'Ana Sayfa',
-          includes: {
-            external: ['js', 'css', 'fontawesome']
-          },
-          user: req.session.user || undefined,
-          categories,
-          windowProducts,
-          category: req.query.category,
-          generalCategory: req.query.generalCategory ? req.query.generalCategory : 'Tüm Ürünler',
-          keywords: req.query.keywords,
-          basket: req.session.basket || [],
-          currency: 7
+          return res.render('index/index', {
+            page: 'index/index',
+            title: 'Ana Sayfa',
+            includes: {
+              external: ['js', 'css', 'fontawesome']
+            },
+            user: req.session.user || undefined,
+            categories,
+            windowProducts,
+            category: req.query.category,
+            generalCategory: req.query.generalCategory ? req.query.generalCategory : 'Tüm Ürünler',
+            keywords: req.query.keywords,
+            basket: req.session.basket || [],
+            currency: 7
+          });
         })
         .catch(err => {
           return console.log(err);
         });
-      });
     });
   } else if (!req.query.category && req.query.generalCategory && !req.query.keywords) {
     Category
@@ -63,11 +63,11 @@ module.exports = (req, res) => {
           keywords: req.query.keywords,
           basket: req.session.basket || [],
           currency: 7
+        });
       })
       .catch(err => {
         return console.log(err);
       });
-    });
   } else {
     Product.getLatest({
       'category': req.query.category,
