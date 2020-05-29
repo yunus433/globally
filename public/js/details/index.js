@@ -32,7 +32,7 @@ window.onload = () => {
         // setTimeout(() => {
         //   numberWrapper.style.display = "none";
         // }, 500);
-        numberWrapper.style.display = "none";
+        numberWrapper.style.visibility = "hidden";
         numberError.innerHTML = "";
         numberInput.value = 1;
       } else {
@@ -44,14 +44,14 @@ window.onload = () => {
       // setTimeout(() => {
       //   numberWrapper.style.display = "none";
       // }, 500);
-      numberWrapper.style.display = "none";
+      numberWrapper.style.visibility = "hidden";
       numberError.innerHTML = "";
       numberInput.value = 1;
     }
 
     if (event.target.className == "add-to-basket-button" && event.target.id.length > 0) {
       event.preventDefault();
-      numberWrapper.style.display = "flex";
+      numberWrapper.style.visibility = "initial";
       // numberWrapper.classList.add('popUpOpenAnimationClass');
       // numberWrapper.classList.remove('popUpCloseAnimationClass');
       clickedButton = event.target;
@@ -72,7 +72,7 @@ window.onload = () => {
 
     if (event.target.className == "add-to-basket-button-main" && event.target.id.length > 0) {
       event.preventDefault();
-      numberWrapper.style.display = "flex";
+      numberWrapper.style.visibility = "initial";
       // numberWrapper.classList.add('popUpOpenAnimationClass');
       // numberWrapper.classList.remove('popUpCloseAnimationClass');
       clickedButton = event.target;

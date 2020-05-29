@@ -121,6 +121,7 @@ router.post(
 );
 router.post(
   '/categories/details',
+    upload.single('file'),
     isAdmin,
     categoryDetailsPostController
 );

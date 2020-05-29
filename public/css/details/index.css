@@ -4,7 +4,7 @@
 }
 
 .product-number-wrapper {
-  position: absolute;
+  position: fixed;
   width: 40vw;
   background-color: white;
   border: 2px solid rgb(236, 236, 236);
@@ -15,8 +15,9 @@
   border-radius: 15px;
   padding: 15px;
   z-index: 15;
-  min-height: fit-content;
-  display: none;
+  min-width: fit-content;
+  visibility: hidden;
+  display: flex;
   flex-direction: column;
 }
 .popUpOpenAnimationClass {
@@ -37,12 +38,14 @@
   font-weight: 300;
   color: rgb(64, 64, 64);
   margin-bottom: 5%;
+  z-index: 15;
 }
 .product-number-input-wrapper {
   border: 2px solid rgb(236, 236, 236);
   width: 85%;
   border-radius: 5px;
   margin-bottom: 20px;
+  z-index: 15;
 }
 .product-number-input {
   outline: none;
@@ -59,12 +62,12 @@
   font-size: 100%;
 }
 .product-number-button-wrapper {
-  margin-top: auto;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
 }
 .product-number-send-button {
-  padding: 2%;
+  padding: 10px;
   background-color: rgb(87, 154, 40);
   color: white;
   font-weight: 600;
@@ -77,13 +80,14 @@
   background-color: rgb(243, 149, 63);
 }
 .product-number-close-button {
-  padding: 2%;
+  padding: 10px;
   background-color: red;
   color: white;
   font-weight: 600;
   font-size: 125%;
   cursor: pointer;
   border-radius: 5px;
+  margin-left: auto;
 }
 
 .main-product-wrapper {

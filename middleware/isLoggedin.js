@@ -11,6 +11,6 @@ module.exports = (req, res, next) => {
     });
   } else {
     req.session.redirect = req.originalUrl;
-    res.redirect("/auth");
+    res.redirect("/auth/login");
   };
 };

@@ -5,7 +5,7 @@ block main
       span.header-title= category.name
       span.header-info Bu sayfadan #{category.name} kategorisini düzenleyebilirsiniz.
   .new-category-form-wrapper
-    form.new-category-form(action="/admin/categories/details?id=" + category._id method="POST")
+    form.new-category-form(action="/admin/categories/details?id=" + category._id method="POST" enctype="multipart/form-data")
       span.form-title Kategoriyi düzenle
       span.input-title Genel Kategori (Bu kategoriye eklediğiniz tüm ürünler bu genel kategori altında listelenecektir)
       .category-wrapper
@@ -33,7 +33,11 @@ block main
           label.each-category
             input(type="radio" required name="category" value="Dolaplar")
             span Profile Aksesuarları
-      span.input-title Kategori ismi
+      span.input-title Kategori İsmi
       input.form-input(type="text" name="name" placeholder="Kategori İsmi" value=category.name required autocomplete="off")
+      .image-wrapper
+        img(src=category.profilePhoto)
+      span.input-title Kategori Fotoğrafı (Şuanki fotoğraf silinip yerine bu fotoğraf eklenecektir)
+      input(type="file" name="file" accept="image/*" required)
       .form-send-wrapper
         button.send-form-button Düzenle

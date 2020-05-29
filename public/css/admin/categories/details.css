@@ -90,6 +90,18 @@
   font-weight: 500;
 }
 
+.image-wrapper {
+  height: 20vh;
+  width: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-wrapper img {
+  height: 100%;
+  width: auto;
+}
+
 .form-send-wrapper {
   display: flex;
   margin-top: 2%;
