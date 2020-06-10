@@ -1,0 +1,27 @@
+.all-content {
+  padding: 0px 4%;
+}
+.all-content-inner-wrapper {
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-content-title {
+  font-size: 175%;
+  color: rgb(15, 15, 15);
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.all-content-subtitle {
+  font-size: 150%;
+  color: rgb(15, 15, 15);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.all-content-text {
+  font-size: 100%;
+  color: rgb(15, 15, 15);
+  font-weight: 300;
+  margin-bottom: 25px;
+}

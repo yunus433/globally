@@ -1,7 +1,7 @@
 module.exports = (req, res) => {
-  return res.render('aboutus/index', {
-    page: 'aboutus/index',
-    title: 'Hakkımızda',
+  return res.render('contact/index', {
+    page: 'contact/index',
+    title: 'İletişim',
     includes: {
       external: ['css', 'fontawesome']
     },

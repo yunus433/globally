@@ -23,6 +23,7 @@ const agreementRouteController = require('./routes/agreementRoute');
 const adminRouteController = require('./routes/adminRoute');
 const buyRouteController = require('./routes/buyRoute');
 const aboutusRouteController = require('./routes/aboutusRoute');
+const contactRouteController = require('./routes/contactRoute');
 const payRouteController = require('./routes/payRoute');
 
 dotenv.config({ path: path.join(__dirname, ".env") });
@@ -88,6 +89,7 @@ app.use('/auth', authRouteController);
 app.use('/admin', adminRouteController);
 app.use('/buy', buyRouteController);
 app.use('/aboutus', aboutusRouteController);
+app.use('/contact', contactRouteController);
 app.use('/pay', payRouteController);
 app.use('/agreement', agreementRouteController);
 
