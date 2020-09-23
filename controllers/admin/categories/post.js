@@ -2,6 +2,8 @@ const fs = require('fs');
 
 const Category = require('../../../models/category/Category');
 
+const uploadPhoto = require('../../../utils/uploadPhoto');
+
 module.exports = (req, res) => {
   if (!req.body || !req.body.name || !req.body.category || !req.file)
     return res.redirect('/admin/category');
@@ -10,35 +12,24 @@ module.exports = (req, res) => {
     .find({})
     .countDocuments()
     .then(number => {
-      req.cloudinary.v2.uploader.upload(
-        './public/res/uploads/' + req.file.filename,
-        {
-          public_id: 'globally/category_images/' + req.file.filename,
-          quality: 25,
-          format: 'JPG',
-          secure: true
-        }, (err, result) => {
+      uploadPhoto(req.file.filename, req.file.size, (err, location) => {
+        if (err) return res.redirect('/admin');
+
+        const newCategoryData = {
+          index: number+1,
+          category: req.body.category,
+          name: req.body.name,
+          profilePhoto: location
+        };
+      
+        const newCategory = new Category(newCategoryData);
+      
+        newCategory.save((err, category) => {
           if (err) return res.redirect('/admin');
           
-          fs.unlink('./public/res/uploads/' + req.file.filename, err => {
-            if (err) return res.redirect('/admin');
-    
-            const newCategoryData = {
-              index: number+1,
-              category: req.body.category,
-              name: req.body.name,
-              profilePhoto: result.secure_url
-            };
-          
-            const newCategory = new Category(newCategoryData);
-          
-            newCategory.save((err, category) => {
-              if (err) return res.redirect('/admin');
-              
-              return res.redirect('/admin/categories');
-            });
-          });
-        });
+          return res.redirect('/admin/categories');
+        });        
+      });
     })
     .catch(err => {
       return res.redirect('/admin');

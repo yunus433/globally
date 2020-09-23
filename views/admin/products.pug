@@ -69,8 +69,10 @@ block main
             span Top
         span.input-title Ürün Açıklaması
         textarea.form-input(type="text" name="description" placeholder="Ürün Açıklaması" required autocomplete="off")
-        span.input-title Fiyat
-        input.form-input(type="text" name="price" placeholder="Fiyat" required autocomplete="off")
+        span.input-title Ürün Boyutları
+        input.form-input(type="text" name="sizelist" placeholder="Aralarına / koyarak farklı boyutta ürünleri girin. ör: 30-30 / 40-40")
+        span.input-title Ürün Fiyatları
+        input.form-input(type="text" name="pricelist" placeholder="Farklı boyutlar için fiyat listesi. Her boyut için bir fiyat girmelisiniz. Araya / koyun. ör: 3.99 / 4.99" required autocomplete="off")
         span.input-title Ürün Fiyatı Dolar Cinsinden Mi Olacak?
         input.form-input(type="checkbox" name="isDolar")
         span.input-title Ürün Fotoğrafları (max 5)

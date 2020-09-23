@@ -1,12 +1,12 @@
 const productPhotoNameArray = [];
 
-function createNewProductPhoto(imageSrc) {  
-  productPhotoNameArray.push(imageSrc);
+function createNewProductPhoto(imageData) {  
+  productPhotoNameArray.push(imageData);
 
   const imageWrapper = document.createElement("div");
   imageWrapper.classList.add("each-product-photo");
   const image = document.createElement("img");
-  image.src= "/res/uploads/" +imageSrc;
+  image.src= "/res/uploads/" + imageData.name;
   imageWrapper.appendChild(image);
 
   if (productPhotoNameArray.length >= 5) {
@@ -48,17 +48,17 @@ window.onload = () => {
       if (xhr.readyState == 4 && xhr.responseText){
         if (xhr.status == 500) {
           alert("Bir hata oluştu, lütfen tekrar deneyin");
-          productPhotoInput.value = ""
+          productPhotoInput.value = "";
           if (!/safari/i.test(navigator.userAgent)){
-            productPhotoInput.type = ""
-            productPhotoInput.type = "file"
+            productPhotoInput.type = "";
+            productPhotoInput.type = "file";
           }
         } else {
-          createNewProductPhoto(xhr.responseText);
-          productPhotoInput.value = ""
+          createNewProductPhoto(JSON.parse(xhr.responseText));
+          productPhotoInput.value = "";
           if (!/safari/i.test(navigator.userAgent)){
-            productPhotoInput.type = ""
-            productPhotoInput.type = "file"
+            productPhotoInput.type = "";
+            productPhotoInput.type = "file";
           }
         }
       };
