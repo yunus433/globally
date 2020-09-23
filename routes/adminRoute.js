@@ -12,6 +12,7 @@ const productsGetController = require('../controllers/admin/products/get');
 const detailsGetController = require('../controllers/admin/details/get');
 const categoriesGetController = require('../controllers/admin/categories/get');
 const categoryDetailsGetController = require('../controllers/admin/categories/details/get');
+const categoryDeleteGetController = require('../controllers/admin/categories/delete');
 const windowGetController = require('../controllers/admin/window/get');
 const windowAddGetController = require('../controllers/admin/window/add');
 const windowDeleteGetController = require('../controllers/admin/window/delete');
@@ -60,6 +61,11 @@ router.get(
   '/categories/details',
     isAdmin,
     categoryDetailsGetController
+);
+router.get(
+  '/categories/delete',
+    isAdmin,
+    categoryDeleteGetController
 );
 router.get(
   '/window',

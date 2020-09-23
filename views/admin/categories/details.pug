@@ -4,6 +4,7 @@ block main
     .header-title-wrapper
       span.header-title= category.name
       span.header-info Bu sayfadan #{category.name} kategorisini düzenleyebilirsiniz.
+    a.delete-category-button(onclick="return confirm('Bu kategoriyi silmek istediğinize emin misiniz? Sildiğiniz zaman eklenmiş bütün ürünler de silinir.')" href=`/admin/categories/delete?id=${category._id.toString()}`) Kategoriyi Sil
   .new-category-form-wrapper
     form.new-category-form(action="/admin/categories/details?id=" + category._id method="POST" enctype="multipart/form-data")
       span.form-title Kategoriyi düzenle
