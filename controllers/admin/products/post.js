@@ -11,7 +11,7 @@ const engName = word => {
 }
 
 module.exports = (req, res, next) => {
-  const productPhotoNameArray = req.body.productPhotoNameArray.split("/").map(each => JSON.parse(each)).filter(each => each.name && each.size);
+  const productPhotoNameArray = JSON.parse(req.body.productPhotoNameArray);
 
   async.times(
     productPhotoNameArray.length,

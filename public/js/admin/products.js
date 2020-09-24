@@ -1,7 +1,7 @@
 const productPhotoNameArray = [];
 
 function createNewProductPhoto(imageData) {  
-  productPhotoNameArray.push(JSON.stringify(imageData));
+  productPhotoNameArray.push(imageData);
 
   const imageWrapper = document.createElement("div");
   imageWrapper.classList.add("each-product-photo");
@@ -13,7 +13,7 @@ function createNewProductPhoto(imageData) {
     document.querySelector(".add-new-button").style.display = "none";
   }
 
-  document.getElementById("file-name-array").value = productPhotoNameArray.join('/');
+  document.getElementById("file-name-array").value = JSON.stringify(productPhotoNameArray);
   document.querySelector(".images-wrapper").appendChild(imageWrapper);
   document.querySelector(".images-wrapper").insertBefore(imageWrapper, imageWrapper.previousElementSibling);
   document.querySelector(".images-outer-wrapper").scrollLeft =  document.querySelector(".images-outer-wrapper").scrollWidth;
