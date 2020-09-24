@@ -11,7 +11,7 @@ const engName = word => {
 }
 
 module.exports = (req, res, next) => {
-  const productPhotoNameArray = req.body.productPhotoNameArray.split(",").filter(each => each.name && each.size);
+  const productPhotoNameArray = req.body.productPhotoNameArray.split("/").map(each => JSON.parse(each)).filter(each => each.name && each.size);
 
   async.times(
     productPhotoNameArray.length,
@@ -46,9 +46,9 @@ module.exports = (req, res, next) => {
               keywords: (engName(req.body.description).split(' ').join('+').split('\n').join('+').split('\t').join('+') + "+" + engName(req.body.name).split(' ').join('+').split('\n').join('+').split('\t').join('+')).split("+"),
               isDolar: req.body.isDolar ? true : false
             };
-        
+
             const newProduct = new Product(newProductData);
-          
+
             newProduct.save((err, product) => {
               if (err) return next(err);
           
