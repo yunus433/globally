@@ -17,7 +17,7 @@
   "author": "Yunus Gürlek",
   "license": "MIT",
   "dependencies": {
-    "async": "^3.1.0",
+    "async": "^3.2.2",
     "aws-sdk": "^2.758.0",
     "bcrypt": "^3.0.6",
     "cloudinary": "^1.15.0",
